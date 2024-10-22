@@ -2,3 +2,67 @@ body {
     background-color: black;
     color: white;
 }
+
+.section {
+    color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 10px;
+    transition: all 0.5s;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill:hover, .project:hover {
+    background-color: rgba(0, 0, 0, 0.158);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.skill img {
+    max-width: 64px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 10px;
+    transition: all 0.5s;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.project img {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.tag {
+    border-radius: 10px;
+    background-color: rgb(80, 80, 255);
+    padding: 5px;
+    border: 5px solid blue;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.simple-icon {
+    max-width: 10px;
+}

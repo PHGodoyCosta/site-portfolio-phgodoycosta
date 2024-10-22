@@ -21,4 +21,15 @@ Route::get("/blog", function() {
     return view('blog');
 });
 
+Route::get("/temdebom", function() {
+    return view('temdebom');
+});
+
+Route::get("/code-company", function() {
+    return view('code-company');
+});
+
+Route::get("/code-company", function() {
+    return view('code-company');
+});
 
