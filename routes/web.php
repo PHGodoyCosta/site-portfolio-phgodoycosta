@@ -22,14 +22,14 @@ Route::get("/blog", function() {
 });
 
 Route::get("/temdebom", function() {
-    return view('temdebom');
+    return view('projects/temdebom');
 });
 
 Route::get("/code-company", function() {
-    return view('code-company');
+    return view('projects/code-company');
 });
 
-Route::get("/code-company", function() {
-    return view('code-company');
+Route::get("/site-portfolio", function() {
+    return view('projects/site-portfolio');
 });
 

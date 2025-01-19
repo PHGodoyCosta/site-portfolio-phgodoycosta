@@ -31,7 +31,7 @@
             <div style="max-width: 500px">
                 <h2>Pedro Henrique Godoy Costa</h2>
                 <ul>
-                    <li>17 anos</li>
+                    <li>18 anos</li>
                     <li>Católico</li>
                     <li>Programador Front End</li>
 
