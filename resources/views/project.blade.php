@@ -23,6 +23,19 @@
         @php
             require __DIR__ . "/../../../resources/Components/header.blade.php";
         @endphp
-        <h1>Project</h1>
+        <h1 class="text-center fw-bold text-capitalize">{{ $project->name }}</h1>
+        <div class="container">
+            @if ($project->repository)
+                <p class="fs-5 ms-2">
+                    <span class="fw-bold">Link do repositório:</span>
+                    <span>{{ $project->repository }}</span>
+                </p>
+            @endif
+            <div>
+                @php
+                    echo $markdown;
+                @endphp
+            </div>
+        </div>
     </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Project;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,19 @@ Route::get("/temdebom", function() {
     return view('projects/temdebom');
 });
 
-Route::get('/projeto/{project}', function(string $project) {
-    return view('project', ['projectName' => $project]);
+Route::get('/projeto/{project}', function(string $projectName) {
+    $project = Project::where('slug', $projectName)->firstOrFail();
+    $parser = new \cebe\markdown\GithubMarkdown();
+
+    $markdownPath = __DIR__ . '/../resources/posts/' . $project->slug . '.md';
+
+    if (file_exists($markdownPath)) {
+        $markdownContent = file_get_contents($markdownPath);
+    } else {
+        $markdownContent = "";
+    }
+
+    return view('project', ['projectName' => $projectName, 'project' => $project, 'markdown' => $parser->parse($markdownContent)]);
 });
 
 Route::get("/code-company", function() {
