@@ -25,6 +25,10 @@ Route::get("/temdebom", function() {
     return view('projects/temdebom');
 });
 
+Route::get('/projeto/{project}', function(string $project) {
+    return view('project', ['projectName' => $project]);
+});
+
 Route::get("/code-company", function() {
     return view('projects/code-company');
 });
