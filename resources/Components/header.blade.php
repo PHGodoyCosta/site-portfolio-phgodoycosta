@@ -1,7 +1,9 @@
 <header class="d-flex flex-wrap justify-content-around py-3 mb-3">
-    <img src="/images/christian.png" alt="Imagem de um peixe, simbolo do cristianismo" style="width: 50px">
+    <a href="/">
+        <img src="/images/christian.png" alt="Imagem de um peixe, simbolo do cristianismo" style="max-height: 35px">
+    </a>
     <ul class="nav nav-pills">
-        <a href="/">
+        <a href="/#">
             <li class="nav-item p-2">Home</li>
         </a>
         <a href="/#sobre-mim">

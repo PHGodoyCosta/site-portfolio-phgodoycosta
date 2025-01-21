@@ -46,3 +46,7 @@ Route::get('/tag/{tag}', function(string $tagName) {
 
     return view('tag', ['tag' => $tag]);
 });
+
+Route::get("/404", function() {
+    return view("404");
+});
