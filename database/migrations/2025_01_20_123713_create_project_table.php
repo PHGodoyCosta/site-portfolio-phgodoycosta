@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('project', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->string('repository');
+            $table->string('description')->nullable()->change();
+            $table->string('repository')->nullable()->change();
+            $table->string('slug')->default('');
             $table->timestamps();
             $table->boolean('isPosted')->default(false);
         });

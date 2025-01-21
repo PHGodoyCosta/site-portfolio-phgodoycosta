@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('project', function (Blueprint $table) {
-            $table->string('slug')->default('');
+        Schema::table('tag', function (Blueprint $table) {
+            $table->string('backgroundColor')->default("black");
+            $table->string('borderColor')->default('black');
+            $table->string('color')->default('white');
         });
     }
 
@@ -21,7 +23,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('project', function (Blueprint $table) {
+        Schema::table('tag', function (Blueprint $table) {
             //
         });
     }

@@ -14,7 +14,7 @@
         @php
             require __DIR__ . "/../../../resources/Components/head.blade.php";
         @endphp
-        
+
         @vite('resources/css/app.css')
         @vite('resources/css/home.css')
 
@@ -49,6 +49,24 @@
         <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white">
             <h2 class="ms-3 fw-bold">Projetos Destaque</h2>
             <div class="d-flex p-3 justify-content-center" style="gap: 20px">
+                @foreach($projects as $project)
+                    <div class="project">
+                        <div>
+                            <a href="@php echo '/projeto/' . $project->slug; @endphp">
+                                <img src="@php echo '/images/posts/' . $project->slug . '/poster.jpg' @endphp" alt="Poster do projeto">
+                                <h3 class="fw-bold mt-2 text-capitalize">{{ $project->name }}</h3>
+                                @if ($project->description)
+                                    <p style="max-width: 200px" class="m-0">{{ $project->description }}</p>
+                                @endif
+                            </a>
+                        </div>
+                        <div class="d-flex p-3" style="gap: 5px">
+                            <div class="tag" style="background-color: #00d8ff;border-color: #00c2e6;color: white">
+                                <span>React</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
                 <div class="project">
                     <div>
                         <img src="https://i.pinimg.com/enabled/564x/6d/7f/16/6d7f164634919b5be31d6bc24ef83a0f.jpg" alt="">

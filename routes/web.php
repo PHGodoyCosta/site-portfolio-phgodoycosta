@@ -15,15 +15,13 @@ use App\Models\Project;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $projects = Project::all();
+
+    return view('home', ['projects' => $projects]);
 });
 
 Route::get("/blog", function() {
     return view('blog');
-});
-
-Route::get("/temdebom", function() {
-    return view('projects/temdebom');
 });
 
 Route::get('/projeto/{project}', function(string $projectName) {
@@ -40,12 +38,3 @@ Route::get('/projeto/{project}', function(string $projectName) {
 
     return view('project', ['projectName' => $projectName, 'project' => $project, 'markdown' => $parser->parse($markdownContent)]);
 });
-
-Route::get("/code-company", function() {
-    return view('projects/code-company');
-});
-
-Route::get("/site-portfolio", function() {
-    return view('projects/site-portfolio');
-});
-

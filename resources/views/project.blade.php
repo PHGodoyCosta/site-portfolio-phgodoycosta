@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>PHGodoyCosta</title>
+        <title>Projeto - {{ $project->name }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -25,6 +25,9 @@
         @endphp
         <h1 class="text-center fw-bold text-capitalize">{{ $project->name }}</h1>
         <div class="container">
+            @php
+                echo $project->tags;
+            @endphp
             @if ($project->repository)
                 <p class="fs-5 ms-2">
                     <span class="fw-bold">Link do repositório:</span>
