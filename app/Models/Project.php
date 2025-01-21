@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use App\Models\Tag;
 
 class Project extends Model
@@ -15,7 +14,7 @@ class Project extends Model
 
     protected $fillable = ['id', 'name', 'description', 'repository', 'isPosted'];
 
-    public function tags(): MorphToMany {
-        return $this->morphToMany(Tag::class, 'relation_tag_project');
+    public function tags() {
+        return $this->belongsToMany(Tag::class, 'relation_tag_project', 'project_id', 'tag_id');
     }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Project;
+use App\Models\Tag;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,9 @@ use App\Models\Project;
 
 Route::get('/', function () {
     $projects = Project::all();
+    $tags = Tag::all();
 
-    return view('home', ['projects' => $projects]);
+    return view('home', ['projects' => $projects, 'tags' => $tags]);
 });
 
 Route::get("/blog", function() {
@@ -37,4 +39,10 @@ Route::get('/projeto/{project}', function(string $projectName) {
     }
 
     return view('project', ['projectName' => $projectName, 'project' => $project, 'markdown' => $parser->parse($markdownContent)]);
+});
+
+Route::get('/tag/{tag}', function(string $tagName) {
+    $tag = Tag::where('slug', $tagName)->firstOrFail();
+
+    return view('tag', ['tag' => $tag]);
 });

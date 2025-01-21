@@ -25,15 +25,20 @@
         @endphp
         <h1 class="text-center fw-bold text-capitalize">{{ $project->name }}</h1>
         <div class="container">
-            @php
-                echo $project->tags;
-            @endphp
             @if ($project->repository)
                 <p class="fs-5 ms-2">
                     <span class="fw-bold">Link do repositório:</span>
-                    <span>{{ $project->repository }}</span>
+                    <a href="{{ $project->repository }}" class="link-light">{{ $project->repository }}</a>
                 </p>
             @endif
+            <div class="d-flex p-3" style="gap: 5px">
+                @foreach ($project->tags as $tag)
+                    {{-- background-color: #00d8ff;border-color: #00c2e6;color: white --}}
+                    <div class="tag" style="@php echo 'background-color: ' . $tag->backgroundColor . ';border-color: ' . $tag->borderColor . ';color: ' . $tag->color . ';'  @endphp">
+                        <span>{{ $tag->name }}</span>
+                    </div>
+                @endforeach
+            </div>
             <div>
                 @php
                     echo $markdown;
