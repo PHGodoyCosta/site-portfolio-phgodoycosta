@@ -8,4 +8,12 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+
+    server: {
+        host: '0.0.0.0', // Permite acesso de outros dispositivos na rede
+        port: 5173,      // Porta padrão do Vite (pode mudar se necessário)
+        hmr: {
+            host: '192.168.3.26', // Substitua pelo IP da máquina (ex: 192.168.1.10)
+        },
+    },
 });

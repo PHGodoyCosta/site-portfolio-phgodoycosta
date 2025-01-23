@@ -44,7 +44,12 @@ Route::get('/projeto/{project}', function(string $projectName) {
 Route::get('/tag/{tag}', function(string $tagName) {
     $tag = Tag::where('slug', $tagName)->firstOrFail();
 
-    return view('tag', ['tag' => $tag]);
+    if (count($tag->projects) > 0) {
+        return view('tag', ['tag' => $tag]);
+    } else {
+        return abort('404');
+    }
+
 });
 
 Route::get("/404", function() {

@@ -23,10 +23,11 @@
         @php
             require __DIR__ . "/../../../resources/Components/header.blade.php";
         @endphp
+
         <h1 class="text-center fw-bold text-capitalize mb-2">Projetos com {{ $tag->name }}</h1>
         <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white">
-            <h2 class="ms-3">Mais Relevantes</h2>
-            <div class="d-flex p-3 justify-content-center" style="gap: 20px">
+            <h2 class="ms-3 fs-3">Mais Relevantes</h2>
+            <div class="d-flex p-3 justify-content-center flex-wrap" style="gap: 20px">
                 @foreach($tag->projects as $project)
                     <div class="project">
                         <div>
@@ -40,7 +41,14 @@
                         </div>
                         <div class="d-flex p-3" style="gap: 5px">
                             @foreach ($project->tags as $tag)
-                                <a href="@php echo '/tag/' . $tag->slug; @endphp" target="_blank">
+                                @php
+                                    if (count($tag->projects) > 0) {
+                                        $linkTag = "#";
+                                    } else {
+                                        $linkTag = '/tag/' . $tag->slug;
+                                    }
+                                @endphp
+                                <a href="@php echo $linkTag; @endphp" target="_blank">
                                     <div class="tag" style="@php echo 'background-color: ' . $tag->backgroundColor . ';border-color: ' . $tag->borderColor . ';color: ' . $tag->color . ';'  @endphp">
                                         <span>{{ $tag->name }}</span>
                                     </div>
