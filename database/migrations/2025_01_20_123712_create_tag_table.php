@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('backgroundColor')->default("black");
             $table->string('borderColor')->default('black');
             $table->string('color')->default('white');
+            $table->boolean('isEstudando')->default(false);
             $table->string('slug');
             $table->timestamps();
         });

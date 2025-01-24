@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Project;
 use App\Models\Tag;
+use App\Models\Formation;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,9 @@ use App\Models\Tag;
 Route::get('/', function () {
     $projects = Project::all();
     $tags = Tag::all();
+    $formations = Formation::all();
 
-    return view('home', ['projects' => $projects, 'tags' => $tags]);
+    return view('home', ['projects' => $projects, 'tags' => $tags, 'formations' => $formations]);
 });
 
 Route::get("/blog", function() {

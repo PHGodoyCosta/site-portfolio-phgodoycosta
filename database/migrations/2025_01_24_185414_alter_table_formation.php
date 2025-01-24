@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('tag', function (Blueprint $table) {
-            /* language - framework - tool - extra */
-            $table->string("category")->default("language");
+        Schema::table('formation', function (Blueprint $table) {
+            $table->text("description")->nullable();
         });
     }
 
@@ -22,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('tag', function (Blueprint $table) {
+        Schema::table('formation', function (Blueprint $table) {
             //
         });
     }

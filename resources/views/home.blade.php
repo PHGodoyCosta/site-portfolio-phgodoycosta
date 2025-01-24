@@ -101,17 +101,67 @@
         </div>
         <div class="w-100 mt-4 section" style="color: white;min-height: 200px;">
             <h2 class="ms-2 fw-bold">Habilidades</h2>
-            <div class="d-flex p-2 mt-3 flex-wrap" style="gap: 15px">
+            <h3 class="fs-5 ms-1">Linguagens de programação</h3>
+            <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
-                    <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
-                        <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
-                        <span>{{ $tag->name }}</span>
-                    </a>
+                    @if ($tag->category == 'language')
+                        <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
+                            <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
+                            <span>{{ $tag->name }}</span>
+                        </a>
+                    @endif
                 @endforeach
                 <div class="skill">
                     <img src="images/typescript.png" alt="">
                     <span>Typescript</span>
                 </div>
+            </div>
+            <h3 class="fs-5 ms-1">Frameworks, bibliotecas e outros</h3>
+            <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
+                @foreach ($tags as $tag)
+                    @if ($tag->category == 'framework')
+                        <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
+                            <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
+                            <span>{{ $tag->name }}</span>
+                        </a>
+                    @endif
+                @endforeach
+            </div>
+            <h3 class="fs-5 ms-1">Extras</h3>
+            <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
+                @foreach ($tags as $tag)
+                    @if ($tag->category == 'extra')
+                        <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
+                            <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
+                            <span>{{ $tag->name }}</span>
+                        </a>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+        <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white" id="contato">
+            <h2 class="ms-2 fw-bold">Formações</h2>
+            <div class="d-flex p-2 mt-3 flex-wrap" style="gap: 15px">
+                <ul>
+                    @foreach ($formations as $formation)
+                        <li class="fs-5">
+                            @php
+                                if ($formation->link) {
+                                    $f_link = $formation->link;
+                                } else {
+                                    $f_link = "#";
+                                }
+                            @endphp
+                            <a class="link-light fw-bold" href="@php echo $f_link; @endphp">
+                                <span>{{ $formation->name }}</span>
+                                @if ($formation->year)
+                                    <span>({{ $formation->year }})</span>
+                                @endif
+                            </a>
+                            <p class="ms-3 fs-6" style="max-width: 50%">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium sit eum, atque, provident fugiat natus asperiores nulla, harum maiores impedit nisi itaque. Laudantium explicabo sint, quod repellendus ullam molestias.</p>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
         <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white" id="contato">
