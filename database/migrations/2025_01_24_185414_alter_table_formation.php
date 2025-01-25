@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::table('formation', function (Blueprint $table) {
             $table->text("description")->nullable();
         });
+
+        Schema::table('tag', function (Blueprint $table) {
+            $table->boolean("isTaggable")->default(true);
+        });
     }
 
     /**

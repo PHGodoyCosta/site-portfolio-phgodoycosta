@@ -41,7 +41,7 @@
                         <p class="m-0">&#64;phgodoycosta</p>
                     </a>
                     <a href="https://github.com/PHGodoyCosta" class="d-flex align-items-center link-light" style="gap: 5px">
-                        <img src="images/github_icon.png" alt="Imagem Icon do instagram" style="width: 35px">
+                        <img src="images/github_white_icon.png" alt="Imagem Icon do instagram" style="width: 35px">
                         <p class="m-0">/phgodoycosta</p>
                     </a>
                     <a href="https://www.linkedin.com/in/phgodoycosta/" class="d-flex align-items-center link-light" style="gap: 5px">
@@ -91,7 +91,7 @@
                             <p style="max-width: 200px" class="m-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid nihil magni error perspiciatis porro expedita atque totam voluptas quo perferendis..</p>
                         </a>
                     </div>
-                    <div  class="d-flex p-3" style="gap: 5px">
+                    <div class="d-flex p-3" style="gap: 5px">
                         <div class="tag" style="background-color: #00d8ff;border-color: #00c2e6;color: white">
                             <span>React</span>
                         </div>
@@ -101,20 +101,25 @@
         </div>
         <div class="w-100 mt-4 section" style="color: white;min-height: 200px;">
             <h2 class="ms-2 fw-bold">Habilidades</h2>
-            <h3 class="fs-5 ms-1">Linguagens de programação</h3>
+            <h3 class="fs-5 ms-1">Linguagens de programação e outras</h3>
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
                     @if ($tag->category == 'language')
                         <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
                             <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
-                            <span>{{ $tag->name }}</span>
+                            @if ($tag->isEstudando == 1)
+                                <div class="d-flex p-3 m-0 flex-column">
+                                    <span>{{ $tag->name }}</span>
+                                    <div style="color: #f54d3a">
+                                        <span>(Estudando)</span>
+                                    </div>
+                                </div>
+                            @else
+                                <span>{{ $tag->name }}</span>
+                            @endif
                         </a>
                     @endif
                 @endforeach
-                <div class="skill">
-                    <img src="images/typescript.png" alt="">
-                    <span>Typescript</span>
-                </div>
             </div>
             <h3 class="fs-5 ms-1">Frameworks, bibliotecas e outros</h3>
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
@@ -122,7 +127,36 @@
                     @if ($tag->category == 'framework')
                         <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
                             <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
-                            <span>{{ $tag->name }}</span>
+                            @if ($tag->isEstudando == 1)
+                                <div class="d-flex p-3 m-0 flex-column">
+                                    <span>{{ $tag->name }}</span>
+                                    <div style="color: #f54d3a">
+                                        <span>(Estudando)</span>
+                                    </div>
+                                </div>
+                            @else
+                                <span>{{ $tag->name }}</span>
+                            @endif
+                        </a>
+                    @endif
+                @endforeach
+            </div>
+            <h3 class="fs-5 ms-1">Ferramentas</h3>
+            <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
+                @foreach ($tags as $tag)
+                    @if ($tag->category == 'tool')
+                        <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
+                            <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
+                            @if ($tag->isEstudando == 1)
+                                <div class="d-flex p-3 m-0 flex-column" style="gap: 5px">
+                                    <span>{{ $tag->name }}</span>
+                                    <div class="tag" style="background-color: #f54d3a;border-color: #c43e2e;color: white">
+                                        <span>Estudando</span>
+                                    </div>
+                                </div>
+                            @else
+                                <span>{{ $tag->name }}</span>
+                            @endif
                         </a>
                     @endif
                 @endforeach
@@ -133,7 +167,16 @@
                     @if ($tag->category == 'extra')
                         <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
                             <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
-                            <span>{{ $tag->name }}</span>
+                            @if ($tag->isEstudando == 1)
+                                <div class="d-flex p-3 m-0 flex-column" style="gap: 5px">
+                                    <span>{{ $tag->name }}</span>
+                                    <div class="tag" style="background-color: #f54d3a;border-color: #c43e2e;color: white">
+                                        <span>Estudando</span>
+                                    </div>
+                                </div>
+                            @else
+                                <span>{{ $tag->name }}</span>
+                            @endif
                         </a>
                     @endif
                 @endforeach
