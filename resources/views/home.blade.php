@@ -55,49 +55,8 @@
             <h2 class="ms-3 fw-bold">Projetos Destaque</h2>
             <div class="d-flex p-3 justify-content-center flex-wrap" style="gap: 20px" id="portfolio">
                 @foreach($projects as $project)
-                    <div class="project">
-                        <div>
-                            <a href="@php echo '/projeto/' . $project->slug; @endphp" class="d-flex align-items-center flex-column">
-                                <img src="@php echo '/images/posts/' . $project->slug . '/poster.png' @endphp" alt="Poster do projeto">
-                                <h3 class="fw-bold mt-2 text-capitalize">{{ $project->name }}</h3>
-                                @if ($project->description)
-                                    <p style="max-width: 200px" class="m-0 text-center">{{ $project->description }}</p>
-                                @endif
-
-                            </a>
-                        </div>
-                        <div class="d-flex p-3" style="gap: 5px">
-                            @foreach ($project->tags as $tag)
-                                @php
-                                    if (count($tag->projects) > 0) {
-                                        $linkTag = '/tag/' . $tag->slug;
-                                    } else {
-                                        $linkTag = "#";
-                                    }
-                                @endphp
-                                <a href="@php echo $linkTag; @endphp" target="_blank">
-                                    <div class="tag" style="@php echo 'background-color: ' . $tag->backgroundColor . ';border-color: ' . $tag->borderColor . ';color: ' . $tag->color . ';'  @endphp">
-                                        <span>{{ $tag->name }}</span>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-                    </div>
+                    @include('partials.project-card', ["project" => $project])
                 @endforeach
-                {{-- <div class="project">
-                    <div>
-                        <img src="https://i.pinimg.com/enabled/564x/6d/7f/16/6d7f164634919b5be31d6bc24ef83a0f.jpg" alt="">
-                        <a href="#">
-                            <h3 class="fw-bold mt-2">TemdeBom</h3>
-                            <p style="max-width: 200px" class="m-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid nihil magni error perspiciatis porro expedita atque totam voluptas quo perferendis..</p>
-                        </a>
-                    </div>
-                    <div class="d-flex p-3" style="gap: 5px">
-                        <div class="tag" style="background-color: #00d8ff;border-color: #00c2e6;color: white">
-                            <span>React</span>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
         <div class="w-100 mt-4 section" style="color: white;min-height: 200px;">
@@ -106,26 +65,7 @@
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
                     @if ($tag->category == 'language')
-                        @php
-                            if ($tag->isTaggable == 1) {
-                                $linkTag = "/tag/" . $tag->slug;
-                            } else {
-                                $linkTag = "#";
-                            }
-                        @endphp
-                        <a href="{{ $linkTag }}" class="skill" target="_blank">
-                            <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
-                            @if ($tag->isEstudando == 1)
-                                <div class="d-flex p-3 m-0 flex-column">
-                                    <span>{{ $tag->name }}</span>
-                                    <div style="color: #f54d3a">
-                                        <span>(Estudando)</span>
-                                    </div>
-                                </div>
-                            @else
-                                <span>{{ $tag->name }}</span>
-                            @endif
-                        </a>
+                        @include("partials.tag-card", ["tag" => $tag])
                     @endif
                 @endforeach
             </div>
@@ -133,19 +73,7 @@
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
                     @if ($tag->category == 'framework')
-                        <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
-                            <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
-                            @if ($tag->isEstudando == 1)
-                                <div class="d-flex p-3 m-0 flex-column">
-                                    <span>{{ $tag->name }}</span>
-                                    <div style="color: #f54d3a">
-                                        <span>(Estudando)</span>
-                                    </div>
-                                </div>
-                            @else
-                                <span>{{ $tag->name }}</span>
-                            @endif
-                        </a>
+                        @include("partials.tag-card", ["tag" => $tag])
                     @endif
                 @endforeach
             </div>
@@ -153,19 +81,7 @@
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
                     @if ($tag->category == 'tool')
-                        <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
-                            <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
-                            @if ($tag->isEstudando == 1)
-                                <div class="d-flex p-3 m-0 flex-column" style="gap: 5px">
-                                    <span>{{ $tag->name }}</span>
-                                    <div class="tag" style="background-color: #f54d3a;border-color: #c43e2e;color: white">
-                                        <span>Estudando</span>
-                                    </div>
-                                </div>
-                            @else
-                                <span>{{ $tag->name }}</span>
-                            @endif
-                        </a>
+                        @include("partials.tag-card", ["tag" => $tag])
                     @endif
                 @endforeach
             </div>
@@ -173,19 +89,7 @@
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
                     @if ($tag->category == 'extra')
-                        <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
-                            <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
-                            @if ($tag->isEstudando == 1)
-                                <div class="d-flex p-3 m-0 flex-column" style="gap: 5px">
-                                    <span>{{ $tag->name }}</span>
-                                    <div class="tag" style="background-color: #f54d3a;border-color: #c43e2e;color: white">
-                                        <span>Estudando</span>
-                                    </div>
-                                </div>
-                            @else
-                                <span>{{ $tag->name }}</span>
-                            @endif
-                        </a>
+                        @include("partials.tag-card", ["tag" => $tag])
                     @endif
                 @endforeach
             </div>
@@ -196,22 +100,7 @@
             <div class="d-flex p-2 mt-3 flex-wrap" style="gap: 15px">
                 <ul>
                     @foreach ($formations as $formation)
-                        <li class="fs-5">
-                            @php
-                                if ($formation->link) {
-                                    $f_link = $formation->link;
-                                } else {
-                                    $f_link = "#";
-                                }
-                            @endphp
-                            <a class="link-light fw-bold" href="@php echo $f_link; @endphp">
-                                <span>{{ $formation->name }}</span>
-                                @if ($formation->year)
-                                    <span>({{ $formation->year }})</span>
-                                @endif
-                            </a>
-                            <p class="ms-3 fs-6 description_curso">{{ $formation->description }}</p>
-                        </li>
+                        @include("partials.formation-course", ["formation" => $formation])
                     @endforeach
                 </ul>
             </div>

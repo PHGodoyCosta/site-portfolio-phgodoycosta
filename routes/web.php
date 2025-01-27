@@ -54,6 +54,12 @@ Route::get('/tag/{tag}', function(string $tagName) {
 
 });
 
+Route::get("/projects", function() {
+    $projects = Project::all();
+
+    return view("projects", ["projects" => $projects]);
+});
+
 Route::get("/404", function() {
     return view("404");
 });

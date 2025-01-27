@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Tecnologia - {{ $tag->name }}</title>
+        <title>Todos os meus projetos</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -24,11 +24,10 @@
             require __DIR__ . "/../../../resources/Components/header.blade.php";
         @endphp
 
-        <h1 class="text-center fw-bold text-capitalize mb-2">Projetos com {{ $tag->name }}</h1>
+        <h1 class="text-center fw-bold text-capitalize mb-2">Todos os meus projetos mais relevantes</h1>
         <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white">
-            <h2 class="ms-3 fs-3">Mais Relevantes</h2>
             <div class="d-flex p-3 justify-content-center flex-wrap" style="gap: 20px">
-                @foreach($tag->projects as $project)
+                @foreach($projects as $project)
                     @include('partials.project-card', ["project" => $project])
                 @endforeach
             </div>

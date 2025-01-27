@@ -19,7 +19,7 @@ INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('La
 
 INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('TypeORM', '#f7a600', '#c68500', 'typeorm', 'framework');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('Electron', '#458590', '#376a73', 'electron', 'framework');
+INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('ElectronJS', '#458590', '#376a73', 'electronjs', 'framework');
 
 INSERT INTO tag (name, backgroundColor, borderColor, slug, category, isEstudando) VALUES ('NestJS', '#e11e4d', '#b4183e', 'nestjs', 'framework', 1);
 
