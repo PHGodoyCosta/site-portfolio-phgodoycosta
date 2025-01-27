@@ -34,7 +34,7 @@
                     <h1 class="mt-1 mb-2 fw-bold fs-4 fs-sm-2">Pedro Henrique Godoy Costa</h1>
                     <h3 class="fs-5 fs-sm-3 mb-2">Programador e Front-End Developer Junior</h3>
                 </div>
-                <p class="w-75 w-sm-auto m-auto mx-sm-0 mb-3 mb-sm-2 fs-6" style="max-width: 500px">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id eveniet blanditiis, eum sapiente delectus perferendis excepturi architecto, accusantium veritatis sit tenetur recusandae! Quae enim error commodi culpa, placeat labore distinctio? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id eveniet blanditiis, eum sapiente delectus perferendis excepturi architecto, accusantium veritatis sit tenetur recusandae! Quae enim error commodi culpa, placeat labore distinctio?</p>
+                <p class="w-75 w-sm-auto m-auto mx-sm-0 mb-3 mb-sm-2 fs-6" style="max-width: 500px">Transformar ideias em <strong>soluções práticas</strong> é o que mais me motiva. Cada projeto que desenvolvi, seja para o portfólio ou para resolver problemas do dia a dia, carrega meu <strong>esforço</strong> e <strong>sonho</strong> de usar a <strong>tecnologia</strong> para impactar vidas. Com uma trajetória de <strong>aprendizado constante</strong> e uma paixão incansável por programação, estou pronto para transformar desafios em soluções reais. Quero <strong>colaborar</strong>, <strong>crescer</strong> e usar a tecnologia para construir um <strong>futuro melhor</strong>. Meu objetivo é ir além do código, criando <strong>impacto duradouro</strong> e soluções que realmente <strong>transformem o mundo</strong>.</p>
                 <div class="d-flex align-items-center flex-column flex-md-row" style="gap: 20px">
                     <a href="https://www.instagram.com/phgodoycosta/" class="d-flex align-items-center link-light" style="gap: 5px">
                         <img src="images/instagram.png" alt="Imagem Icon do instagram" style="width: 35px">
@@ -57,12 +57,13 @@
                 @foreach($projects as $project)
                     <div class="project">
                         <div>
-                            <a href="@php echo '/projeto/' . $project->slug; @endphp">
-                                <img src="@php echo '/images/posts/' . $project->slug . '/poster.jpg' @endphp" alt="Poster do projeto">
+                            <a href="@php echo '/projeto/' . $project->slug; @endphp" class="d-flex align-items-center flex-column">
+                                <img src="@php echo '/images/posts/' . $project->slug . '/poster.png' @endphp" alt="Poster do projeto">
                                 <h3 class="fw-bold mt-2 text-capitalize">{{ $project->name }}</h3>
                                 @if ($project->description)
-                                    <p style="max-width: 200px" class="m-0">{{ $project->description }}</p>
+                                    <p style="max-width: 200px" class="m-0 text-center">{{ $project->description }}</p>
                                 @endif
+
                             </a>
                         </div>
                         <div class="d-flex p-3" style="gap: 5px">
@@ -83,7 +84,7 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="project">
+                {{-- <div class="project">
                     <div>
                         <img src="https://i.pinimg.com/enabled/564x/6d/7f/16/6d7f164634919b5be31d6bc24ef83a0f.jpg" alt="">
                         <a href="#">
@@ -96,7 +97,7 @@
                             <span>React</span>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="w-100 mt-4 section" style="color: white;min-height: 200px;">
@@ -105,7 +106,14 @@
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
                     @if ($tag->category == 'language')
-                        <a href="/tag/{{ $tag->slug }}" class="skill" target="_blank">
+                        @php
+                            if ($tag->isTaggable == 1) {
+                                $linkTag = "/tag/" . $tag->slug;
+                            } else {
+                                $linkTag = "#";
+                            }
+                        @endphp
+                        <a href="{{ $linkTag }}" class="skill" target="_blank">
                             <img src="images/@php echo $tag->slug . '_icon.png'; @endphp" alt="Imagem icon da tecnologia {{ $tag->name }}">
                             @if ($tag->isEstudando == 1)
                                 <div class="d-flex p-3 m-0 flex-column">
@@ -184,6 +192,7 @@
         </div>
         <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white" id="contato">
             <h2 class="ms-2 fw-bold">Formações</h2>
+            <p class="ms-3 fs-6 description_curso">Tentei reunir todos os cursos que fiz nesse apanhado, porém o meu aprendizado durante esses anos foi uma mistura de cursos online, projetos que eu fazia, vários simples para teste que eu acabei perdendo, lendo documentação, Stack Overflow, quebrando a cabeça, procurando por fontes para resolver aquele bug específico, revisando código dos outros... Mas dentre os cursos, esses são os principais</p>
             <div class="d-flex p-2 mt-3 flex-wrap" style="gap: 15px">
                 <ul>
                     @foreach ($formations as $formation)
@@ -201,7 +210,7 @@
                                     <span>({{ $formation->year }})</span>
                                 @endif
                             </a>
-                            <p class="ms-3 fs-6" style="max-width: 50%">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laudantium sit eum, atque, provident fugiat natus asperiores nulla, harum maiores impedit nisi itaque. Laudantium explicabo sint, quod repellendus ullam molestias.</p>
+                            <p class="ms-3 fs-6 description_curso">{{ $formation->description }}</p>
                         </li>
                     @endforeach
                 </ul>
