@@ -1,47 +1,56 @@
 
 -- Insert Tags:
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug) VALUES ('PHP', '#7277ad', '#5b5f8a', 'php');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug) VALUES (1, 'Javascript', '#EFD81C', '#bfad16', 'javascript');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug) VALUES ('Typescript', '#2f74c0', '#265d9a', 'typescript');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug) VALUES (2, 'Bootstrap', '#7E12F8', '#650ec6', 'bootstrap');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug) VALUES ('Python', '#356e9f', '#2a587f', 'python');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug) VALUES (3, 'PHP', '#7277ad', '#5b5f8a', 'php');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug) VALUES ('React', '#00d8ff', '#00c2e6', 'react');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug) VALUES (4, 'Typescript', '#2f74c0', '#265d9a', 'typescript');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug) VALUES ('C#', '#95478e', '#671473', 'c-sharp');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug) VALUES (5, 'Python', '#356e9f', '#2a587f', 'python');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug) VALUES ('SQL', '#00758f', '#005e72', 'sql');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug) VALUES (6, 'React', '#00d8ff', '#00c2e6', 'react');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug) VALUES ('HTML e CSS', '#039BE6', '#f4470b', 'html-e-css');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug) VALUES (7, 'C#', '#95478e', '#671473', 'c-sharp');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('Laravel', '#ff291a', '#cc2115', 'laravel', 'framework');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category) VALUES (8, 'Laravel', '#ff291a', '#cc2115', 'laravel', 'framework');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('TypeORM', '#f7a600', '#c68500', 'typeorm', 'framework');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category) VALUES (9, 'TypeORM', '#f7a600', '#c68500', 'typeorm', 'framework');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('ElectronJS', '#458590', '#376a73', 'electronjs', 'framework');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category) VALUES (10, 'ElectronJS', '#458590', '#376a73', 'electronjs', 'framework');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug, category, isEstudando) VALUES ('NestJS', '#e11e4d', '#b4183e', 'nestjs', 'framework', 1);
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category, isEstudando) VALUES (11, 'NestJS', '#e11e4d', '#b4183e', 'nestjs', 'framework', 1);
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug, category, isEstudando) VALUES ('Sass', '#c66394', '#9e4f76', 'sass', 'framework', 1);
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category) VALUES (12, 'NextJS', '#101010', '#0d0d0d', 'nextjs', 'framework');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('NextJS', '#101010', '#0d0d0d', 'nextjs', 'framework');
+INSERT INTO tag (id, name, slug, category) VALUES (13, 'Git', 'git', 'tool');
+INSERT INTO tag (id, name, slug, category) VALUES (14, 'Visual Studio Code', 'vscode', 'tool');
+INSERT INTO tag (id, name, slug, category) VALUES (15, 'Figma', 'figma', 'tool');
+INSERT INTO tag (id, name, slug, category) VALUES (16, 'Trello', 'trello', 'tool');
+INSERT INTO tag (id, name, slug, category) VALUES (17, 'Miro', 'miro', 'tool');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('Pandas', '#19227a', '#141b62', 'pandas', 'framework');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug) VALUES (18, 'SQL', '#00758f', '#005e72', 'sql');
 
-INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('Selenium', '#00b400', '#009000', 'selenium', 'framework');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug) VALUES (19, 'HTML e CSS', '#039BE6', '#f4470b', 'html-e-css');
 
-INSERT INTO tag (name, slug, category) VALUES ('Git', 'git', 'tool');
-INSERT INTO tag (name, slug, category) VALUES ('Visual Studio Code', 'vscode', 'tool');
-INSERT INTO tag (name, slug, category) VALUES ('Figma', 'figma', 'tool');
-INSERT INTO tag (name, slug, category) VALUES ('Trello', 'trello', 'tool');
-INSERT INTO tag (name, slug, category) VALUES ('Miro', 'miro', 'tool');
-INSERT INTO tag (name, slug, category) VALUES ('Teams', 'teams', 'tool');
-INSERT INTO tag (name, slug, category) VALUES ('Git Hub', 'github', 'tool');
+INSERT INTO tag (id, name, slug, category) VALUES (20, 'Teams', 'teams', 'tool');
 
-INSERT INTO tag (name, slug, category) VALUES ('Excel', 'excel', 'extra');
-INSERT INTO tag (name, slug, category) VALUES ('AWS', 'aws', 'extra');
-INSERT INTO tag (name, slug, category) VALUES ('Digital Ocean', 'digital-ocean', 'extra');
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category, isEstudando) VALUES (21, 'Sass', '#c66394', '#9e4f76', 'sass', 'framework', 1);
+
+
+INSERT INTO tag (id, name, slug, category) VALUES (22, 'Git Hub', 'github', 'tool');
+
+INSERT INTO tag (id, name, slug, category) VALUES (23, 'Excel', 'excel', 'extra');
+
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category) VALUES (24, 'Pandas', '#19227a', '#141b62', 'pandas', 'framework');
+
+INSERT INTO tag (id, name, slug, category) VALUES (25, 'AWS', 'aws', 'extra');
+INSERT INTO tag (id, name, slug, category) VALUES (26, 'Digital Ocean', 'digital-ocean', 'extra');
+
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category) VALUES (27, 'Selenium', '#00b400', '#009000', 'selenium', 'framework');
+
 
 -- Formations:
 
@@ -67,27 +76,29 @@ INSERT INTO formation (name, year, link, description) VALUES ("Curso de Laravel"
 
 -- Projects
 
-INSERT INTO project (name, description, repository, slug, isPosted, isDestaque) VALUES ("Discipline", "Uma alternativa para os estudantes em geral conseguirem fazer avaliações e atividades de forma online, fácil e dinamica", "https://github.com/codecompanybrasil/discipline-web", "discipline", 1, 1);
+INSERT INTO project (id, name, description, repository, slug, isPosted, isDestaque) VALUES (9, "Discipline", "Uma alternativa para os estudantes em geral conseguirem fazer avaliações e atividades de forma online, fácil e dinamica", "https://github.com/codecompanybrasil/discipline-web", "discipline", 1, 1);
 
-INSERT INTO project (name, description, slug, isPosted, isDestaque) VALUES ("Temdebom", "Um site para que as pessoas pudessem encontrar com maior facilidade os comércios, vendas e coisas interessantes na cidade", "temdebom", 0, 1);
+INSERT INTO project (id, name, description, slug, isPosted, isDestaque) VALUES (10, "Temdebom", "Um site para que as pessoas pudessem encontrar com maior facilidade os comércios, vendas e coisas interessantes na cidade", "temdebom", 0, 1);
 
-INSERT INTO project (name, description, slug, isPosted, isDestaque) VALUES ("Code Company Brasil", "Minha comunidade de programação, que rendeu bons projetos, aprendizados, networking e me possibilitou conhecer e trabalhar com programadores sensacionais", "code-company-brasil", 0, 1);
+INSERT INTO project (id, name, description, repository, slug, isPosted, isDestaque) VALUES (11, "Youtube Conversor", "Um aplicativo para windows que permite fazer o download gratuito de vídeos e playlists do youtube, de maneira prática e rápida", "https://github.com/PHGodoyCosta/Youtube_Downloader", "youtube-conversor", 1, 1);
 
-INSERT INTO project (name, description, repository, slug, isPosted, isDestaque) VALUES ("Youtube Conversor", "Um aplicativo para windows que permite fazer o download gratuito de vídeos e playlists do youtube, de maneira prática e rápida", "https://github.com/PHGodoyCosta/Youtube_Downloader", "youtube-conversor", 1, 1);
+INSERT INTO project (id, name, description, slug, isPosted, isDestaque) VALUES (12, "Code Company Brasil", "Minha comunidade de programação, que rendeu bons projetos, aprendizados, networking e me possibilitou conhecer e trabalhar com programadores sensacionais", "code-company-brasil", 0, 1);
 
-INSERT INTO project (name, description, repository, slug, isPosted, isDestaque) VALUES ("Site Portfólio", "Esse site, embora 'simples', é um sistema completo feito com Laravel + MySQL", "https://github.com/PHGodoyCosta/site-portfolio-phgodoycosta", "site-porfolio", 1, 1);
+INSERT INTO project (id, name, description, repository, slug, isPosted, isDestaque) VALUES (13, "Site Portfólio", "Esse site, embora 'simples', é um sistema completo feito com Laravel + MySQL", "https://github.com/PHGodoyCosta/site-portfolio-phgodoycosta", "site-porfolio", 1, 1);
 
-INSERT INTO project (name, description, repository, slug, isPosted) VALUES ("Code Bot", "Um bot para discord com python completo, feito ajudar a gerenciar a Code Company", "https://github.com/codecompanybrasil/Code-bot", "code-bot", 1);
+INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (14, "Code Bot", "Um bot para discord com python completo, feito ajudar a gerenciar a Code Company", "https://github.com/codecompanybrasil/Code-bot", "code-bot", 1);
 
-INSERT INTO project (name, description, repository, slug, isPosted) VALUES ("Bot de Whatsapp", "Um bot com python que envia mensagem por whatsapp", "https://github.com/PHGodoyCosta/Filhao", "bot-de-whatsapp", 1);
+INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (15, "VideoTube", "Uma cópia parcial do Youtube, com autenticação, upload de vídeos, criação de canais e a possíbilidade de assisti-los", " https://github.com/PHGodoyCosta/VideoTube", "video-tube", 1);
 
-INSERT INTO project (name, description, repository, slug, isPosted) VALUES ("Conversor de PDF para Excel", "Um trabalho freelance que fiz, um script python que transforma um padrão de PDF para Excel", "https://github.com/PHGodoyCosta/Conversor-pdf-to-excel", "conversor-pdf-to-excel", 1);
+INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (16, "Bot de Whatsapp", "Um bot com python que envia mensagem por whatsapp", "https://github.com/PHGodoyCosta/Filhao", "bot-de-whatsapp", 1);
 
-INSERT INTO project (name, description, repository, slug, isPosted) VALUES ("Gerador de números perfeitos", "Um Script Python que verifica e encontra números perfeitos", "https://github.com/PHGodoyCosta/Finder-Perfect-Numbers", "gerador-de-numeros-perfeitos", 1);
+INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (17, "Conversor de PDF para Excel", "Um trabalho freelance que fiz, um script python que transforma um padrão de PDF para Excel", "https://github.com/PHGodoyCosta/Conversor-pdf-to-excel", "conversor-pdf-to-excel", 1);
+
+INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (18, "Gerador de números perfeitos", "Um Script Python que verifica e encontra números perfeitos", "https://github.com/PHGodoyCosta/Finder-Perfect-Numbers", "gerador-de-numeros-perfeitos", 1);
 
 --Tag para os projects
 
---Discipline:
+-- Discipline:
 
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (4, 9);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (6, 9);
@@ -95,7 +106,7 @@ INSERT INTO relation_tag_project (tag_id, project_id) VALUES (10, 9);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (11, 9);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (2, 9);
 
---TemdeBom
+-- TemdeBom
 
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (4, 10);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (9, 10);
@@ -129,12 +140,12 @@ INSERT INTO relation_tag_project (tag_id, project_id) VALUES (4, 15);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (6, 15);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (11, 15);
 
---Bot de Whatsapp
+-- Bot de Whatsapp
 
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (5, 16);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (27, 16);
 
---Conversor de PDF para Excel
+-- Conversor de PDF para Excel
 
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (5, 17);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (24, 17);

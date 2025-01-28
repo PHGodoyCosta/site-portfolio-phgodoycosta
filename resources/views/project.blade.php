@@ -15,8 +15,13 @@
             require __DIR__ . "/../../../resources/Components/head.blade.php";
         @endphp
 
-        @vite('resources/css/app.css')
-        @vite('resources/css/home.css')
+        <!-- Development -->
+        {{-- @vite('resources/css/app.css')
+        @vite('resources/css/home.css') --}}
+
+        <!-- Production -->
+        <link rel="stylesheet" href="/build/assets/app-DhVkvI4C.css">
+        <link rel="stylesheet" href="/build/assets/home-BSzF_EDF.css">
 
         <style>
             .project-post *{
