@@ -53,7 +53,7 @@
                     </a>
                 @endforeach
             </div>
-            <div class="project-post">
+            <div class="project-post pb-2">
                 @php
                     echo $markdown;
                 @endphp

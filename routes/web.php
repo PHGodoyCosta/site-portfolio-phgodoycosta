@@ -17,7 +17,7 @@ use App\Models\Formation;
 */
 
 Route::get('/', function () {
-    $projects = Project::all();
+    $projects = Project::where("isDestaque", true)->get();
     $tags = Tag::all();
     $formations = Formation::all();
 

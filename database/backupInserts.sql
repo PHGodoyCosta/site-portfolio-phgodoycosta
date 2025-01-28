@@ -27,6 +27,10 @@ INSERT INTO tag (name, backgroundColor, borderColor, slug, category, isEstudando
 
 INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('NextJS', '#101010', '#0d0d0d', 'nextjs', 'framework');
 
+INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('Pandas', '#19227a', '#141b62', 'pandas', 'framework');
+
+INSERT INTO tag (name, backgroundColor, borderColor, slug, category) VALUES ('Selenium', '#00b400', '#009000', 'selenium', 'framework');
+
 INSERT INTO tag (name, slug, category) VALUES ('Git', 'git', 'tool');
 INSERT INTO tag (name, slug, category) VALUES ('Visual Studio Code', 'vscode', 'tool');
 INSERT INTO tag (name, slug, category) VALUES ('Figma', 'figma', 'tool');
@@ -36,6 +40,8 @@ INSERT INTO tag (name, slug, category) VALUES ('Teams', 'teams', 'tool');
 INSERT INTO tag (name, slug, category) VALUES ('Git Hub', 'github', 'tool');
 
 INSERT INTO tag (name, slug, category) VALUES ('Excel', 'excel', 'extra');
+INSERT INTO tag (name, slug, category) VALUES ('AWS', 'aws', 'extra');
+INSERT INTO tag (name, slug, category) VALUES ('Digital Ocean', 'digital-ocean', 'extra');
 
 -- Formations:
 
@@ -61,3 +67,78 @@ INSERT INTO formation (name, year, link, description) VALUES ("Curso de Laravel"
 
 -- Projects
 
+INSERT INTO project (name, description, repository, slug, isPosted, isDestaque) VALUES ("Discipline", "Uma alternativa para os estudantes em geral conseguirem fazer avaliações e atividades de forma online, fácil e dinamica", "https://github.com/codecompanybrasil/discipline-web", "discipline", 1, 1);
+
+INSERT INTO project (name, description, slug, isPosted, isDestaque) VALUES ("Temdebom", "Um site para que as pessoas pudessem encontrar com maior facilidade os comércios, vendas e coisas interessantes na cidade", "temdebom", 0, 1);
+
+INSERT INTO project (name, description, slug, isPosted, isDestaque) VALUES ("Code Company Brasil", "Minha comunidade de programação, que rendeu bons projetos, aprendizados, networking e me possibilitou conhecer e trabalhar com programadores sensacionais", "code-company-brasil", 0, 1);
+
+INSERT INTO project (name, description, repository, slug, isPosted, isDestaque) VALUES ("Youtube Conversor", "Um aplicativo para windows que permite fazer o download gratuito de vídeos e playlists do youtube, de maneira prática e rápida", "https://github.com/PHGodoyCosta/Youtube_Downloader", "youtube-conversor", 1, 1);
+
+INSERT INTO project (name, description, repository, slug, isPosted, isDestaque) VALUES ("Site Portfólio", "Esse site, embora 'simples', é um sistema completo feito com Laravel + MySQL", "https://github.com/PHGodoyCosta/site-portfolio-phgodoycosta", "site-porfolio", 1, 1);
+
+INSERT INTO project (name, description, repository, slug, isPosted) VALUES ("Code Bot", "Um bot para discord com python completo, feito ajudar a gerenciar a Code Company", "https://github.com/codecompanybrasil/Code-bot", "code-bot", 1);
+
+INSERT INTO project (name, description, repository, slug, isPosted) VALUES ("Bot de Whatsapp", "Um bot com python que envia mensagem por whatsapp", "https://github.com/PHGodoyCosta/Filhao", "bot-de-whatsapp", 1);
+
+INSERT INTO project (name, description, repository, slug, isPosted) VALUES ("Conversor de PDF para Excel", "Um trabalho freelance que fiz, um script python que transforma um padrão de PDF para Excel", "https://github.com/PHGodoyCosta/Conversor-pdf-to-excel", "conversor-pdf-to-excel", 1);
+
+INSERT INTO project (name, description, repository, slug, isPosted) VALUES ("Gerador de números perfeitos", "Um Script Python que verifica e encontra números perfeitos", "https://github.com/PHGodoyCosta/Finder-Perfect-Numbers", "gerador-de-numeros-perfeitos", 1);
+
+--Tag para os projects
+
+--Discipline:
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (4, 9);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (6, 9);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (10, 9);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (11, 9);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (2, 9);
+
+--TemdeBom
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (4, 10);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (9, 10);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (2, 10);
+
+-- Youtube Conversor
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (1, 11);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (5, 11);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (10, 11);
+
+-- Code Company
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (3, 12);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (18, 12);
+
+-- Site Porfólio
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (3, 13);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (8, 13);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (18, 13);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (2, 13);
+
+-- Code Bot
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (5, 14);
+
+-- VideoTube
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (4, 15);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (6, 15);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (11, 15);
+
+--Bot de Whatsapp
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (5, 16);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (27, 16);
+
+--Conversor de PDF para Excel
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (5, 17);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (24, 17);
+
+-- Gerador de números perfeitos
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (5, 18);

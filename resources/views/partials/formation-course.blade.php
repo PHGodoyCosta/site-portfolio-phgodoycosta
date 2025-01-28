@@ -6,7 +6,7 @@
             $f_link = "#";
         }
     @endphp
-    <a class="link-light fw-bold" href="@php echo $f_link; @endphp">
+    <a class="link-light fw-bold" style="text-decoration: underline" href="@php echo $f_link; @endphp">
         <span>{{ $formation->name }}</span>
         @if ($formation->year)
             <span>({{ $formation->year }})</span>

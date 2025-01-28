@@ -34,7 +34,7 @@
                     <h1 class="mt-1 mb-2 fw-bold fs-4 fs-sm-2">Pedro Henrique Godoy Costa</h1>
                     <h3 class="fs-5 fs-sm-3 mb-2">Programador e Front-End Developer Junior</h3>
                 </div>
-                <p class="w-75 w-sm-auto m-auto mx-sm-0 mb-3 mb-sm-2 fs-6" style="max-width: 500px">Transformar ideias em <strong>soluções práticas</strong> é o que mais me motiva. Cada projeto que desenvolvi, seja para o portfólio ou para resolver problemas do dia a dia, carrega meu <strong>esforço</strong> e <strong>sonho</strong> de usar a <strong>tecnologia</strong> para impactar vidas. Com uma trajetória de <strong>aprendizado constante</strong> e uma paixão incansável por programação, estou pronto para transformar desafios em soluções reais. Quero <strong>colaborar</strong>, <strong>crescer</strong> e usar a tecnologia para construir um <strong>futuro melhor</strong>. Meu objetivo é ir além do código, criando <strong>impacto duradouro</strong> e soluções que realmente <strong>transformem o mundo</strong>.</p>
+                <p class="w-75 w-sm-auto m-auto mx-sm-0 mb-3 mb-sm-2 fs-6" style="max-width: 500px">Transformar ideias em <strong>soluções práticas</strong> é o que mais me motiva. Cada projeto que desenvolvi, seja para o portfólio ou para resolver problemas do dia a dia, carrega meu <strong>esforço</strong> e <strong>sonho</strong> de usar a <strong>tecnologia</strong> para impactar vidas. Com uma trajetória de <strong>aprendizado constante</strong> e uma paixão incansável por programação, estou pronto para transformar desafios em soluções reais. Quero <strong>colaborar</strong>, <strong>crescer</strong> e usar a tecnologia para construir um <strong>futuro melhor</strong>. Meu objetivo é ir além do código, criando um <strong>impacto duradouro</strong> e soluções que realmente <strong>transformem o mundo</strong>.</p>
                 <div class="d-flex align-items-center flex-column flex-md-row" style="gap: 20px">
                     <a href="https://www.instagram.com/phgodoycosta/" class="d-flex align-items-center link-light" style="gap: 5px">
                         <img src="images/instagram.png" alt="Imagem Icon do instagram" style="width: 35px">
@@ -52,7 +52,10 @@
             </div>
         </div>
         <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white">
-            <h2 class="ms-3 fw-bold">Projetos Destaque</h2>
+            <h2 class="ms-3 fw-bold mb-2">Projetos Destaque</h2>
+            <div>
+                <a href="/projects" class="link-light link-offset-1 mb-2 ms-4" style="text-decoration: underline">🚀 Clique para ver todos os projetos</a>
+            </div>
             <div class="d-flex p-3 justify-content-center flex-wrap" style="gap: 20px" id="portfolio">
                 @foreach($projects as $project)
                     @include('partials.project-card', ["project" => $project])
