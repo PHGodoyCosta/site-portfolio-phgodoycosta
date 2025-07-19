@@ -15,13 +15,15 @@
             require __DIR__ . "/../../../resources/Components/head.blade.php";
         @endphp
 
-        <!-- Development -->
-        {{-- @vite('resources/css/app.css')
-        @vite('resources/css/home.css') --}}
+        @env("local")
+            @vite('resources/css/app.css')
+            @vite('resources/css/home.css')
+        @endenv
 
-        <!-- Production -->
-        <link rel="stylesheet" href="/build/assets/app-DhVkvI4C.css">
-        <link rel="stylesheet" href="/build/assets/home-BSzF_EDF.css">
+        @production
+            <link rel="stylesheet" href="/build/assets/app-DhVkvI4C.css">
+            <link rel="stylesheet" href="/build/assets/home-BSzF_EDF.css">
+        @endproduction
 
     </head>
     <body>

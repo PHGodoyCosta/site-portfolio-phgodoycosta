@@ -15,17 +15,38 @@
             require __DIR__ . "/../../../resources/Components/head.blade.php";
         @endphp
 
-        <!-- Development -->
-        {{-- @vite('resources/css/app.css')
-        @vite('resources/css/home.css') --}}
+        @env("local")
+            @vite('resources/css/app.css')
+            @vite('resources/css/home.css')
+        @endenv
 
-        <!-- Production -->
-        <link rel="stylesheet" href="/build/assets/app-DhVkvI4C.css">
-        <link rel="stylesheet" href="/build/assets/home-BSzF_EDF.css">
+        @production
+            <link rel="stylesheet" href="/build/assets/app-DhVkvI4C.css">
+            <link rel="stylesheet" href="/build/assets/home-BSzF_EDF.css">
+        @endproduction
 
         <style>
             .project-post *{
-                max-width: 100%;
+                max-width: 90%;
+                margin: auto;
+            }
+
+            .project img {
+                max-width: 300px;
+                min-width: 200px;
+                /*height: 150px;*/
+                border-radius: 10px;
+            }
+
+            .project-post h2, .project-post p {
+                margin-top: 5px;
+                margin-bottom: 10px;
+            }
+
+            .project-post h1, .project-post h2, .project-post h3, .project-post h4, .project-post h5, .project-post h6 {
+                font-weight: bold;
+                margin-top: 5px;
+                margin-bottom: 10px;
             }
         </style>
 
@@ -35,14 +56,14 @@
             require __DIR__ . "/../../../resources/Components/header.blade.php";
         @endphp
         <h1 class="text-center fw-bold text-capitalize">{{ $project->name }}</h1>
-        <div class="container w-100">
+        <div class="container w-100 mb-5">
             @if ($project->repository)
-                <p class="fs-6 fs-md-5 ms-2">
+                <p class="fs-6 fs-md-5 ms-2" style="word-break: break-all;">
                     <span class="fw-bold">Link do repositório:</span>
                     <a href="{{ $project->repository }}" class="link-light">{{ $project->repository }}</a>
                 </p>
             @endif
-            <div class="d-flex p-3" style="gap: 5px">
+            <div class="d-flex p-3 flex-wrap" style="gap: 5px">
                 @foreach ($project->tags as $tag)
                     @php
                         if (count($tag->projects) > 0) {
