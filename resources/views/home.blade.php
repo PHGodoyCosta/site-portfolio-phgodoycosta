@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-        <title>PHGodoyCosta</title>
+        <title>Pedro Henrique Godoy Costa - Site Portfólio</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -19,6 +19,7 @@
         @env("local")
             @vite('resources/css/app.css')
             @vite('resources/css/home.css')
+            @vite('resources/js/app.js')
         @endenv
 
         @production
@@ -38,7 +39,7 @@
                 <div class="w-75 w-sm-auto m-auto mx-sm-0">
                     <p class="m-0">Olá! 👋 Meu nome é</p>
                     <h1 class="mt-1 mb-2 fw-bold fs-4 fs-sm-2">Pedro Henrique Godoy Costa</h1>
-                    <h3 class="fs-5 fs-sm-3 mb-2">Programador e Front-End Developer Junior</h3>
+                    <h3 class="fs-5 fs-sm-3 mb-2">Desenvolvedor Full Stack Junior</h3>
                 </div>
                 <p class="w-75 w-sm-auto m-auto mx-sm-0 mb-3 mb-sm-2 fs-6" style="max-width: 500px">Transformar ideias em <strong>soluções práticas</strong> é o que mais me motiva. Cada projeto que desenvolvi, seja para o portfólio ou para resolver problemas do dia a dia, carrega meu <strong>esforço</strong> e <strong>sonho</strong> de usar a <strong>tecnologia</strong> para impactar vidas. Com uma trajetória de <strong>aprendizado constante</strong> e uma paixão incansável por programação, estou pronto para transformar desafios em soluções reais. Quero <strong>colaborar</strong>, <strong>crescer</strong> e usar a tecnologia para construir um <strong>futuro melhor</strong>. Meu objetivo é ir além do código, criando um <strong>impacto duradouro</strong> e soluções que realmente <strong>transformem o mundo</strong>.</p>
                 <div class="d-flex align-items-center flex-column flex-md-row" style="gap: 20px">
@@ -103,15 +104,24 @@
                 @endforeach
             </div>
         </div>
-        <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white" id="contato">
-            <h2 class="ms-2 fw-bold">Formações</h2>
+        <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white">
+            <h2 class="ms-2 fw-bold">Formação</h2>
             <p class="ms-3 fs-6 description_curso">Tentei reunir todos os cursos que fiz nesse apanhado, porém o meu aprendizado durante esses anos foi uma mistura de cursos online, projetos que eu fazia, vários simples para teste que eu acabei perdendo, lendo documentação, Stack Overflow, quebrando a cabeça, procurando por fontes para resolver aquele bug específico, revisando código dos outros... Mas dentre os cursos, esses são os principais</p>
-            <div class="d-flex p-2 mt-3 flex-wrap" style="gap: 15px">
-                <ul>
-                    @foreach ($formations as $formation)
-                        @include("partials.formation-course", ["formation" => $formation])
-                    @endforeach
-                </ul>
+            <ul class="d-flex p-2 mt-3 flex-wrap" style="gap: 0px">
+                @foreach ($formations as $i => $formation)
+                    @include("partials.formation-course", ["formation" => $formation, "i" => $i])
+                @endforeach
+            </ul>
+        </div>
+        <div class="w-100 mt-4 section" style="color: white;min-height: 200px;" id="curriculo">
+            <h2 class="fw-bold mt-2 fs-2 fs-md-1 text-center">Baixe o meu currículo!</h2>
+            <div class="d-flex justify-content-center align-items-center mt-3">
+                <a href="/documents/curriculo.pdf" target="_blank" class="card p-2 d-flex flex-column align-items-center" style="background-color: #1A1A1A;border: 3px solid white;">
+                    <img src="/images/download_icon.png" alt="Icon para download do currículo" style="width: 70px">
+                    <div class="card-body">
+                        <h3 class="fw-normal text-center m-0 p-0" style="color: white;">Download</h3>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white" id="contato">
@@ -134,5 +144,16 @@
                 </div>
             </div>
         </div>
+        <script>
+            function hide_formation_description_text(id) {
+                document.getElementById('description_complete_' + id).style.display = 'none';
+                document.getElementById('description_resumed_' + id).style.display = 'block';
+            }
+
+            function show_formation_description_text(id) {
+                document.getElementById('description_resumed_' + id).style.display = 'none';
+                document.getElementById('description_complete_' + id).style.display = 'block';
+            }
+        </script>
     </body>
 </html>

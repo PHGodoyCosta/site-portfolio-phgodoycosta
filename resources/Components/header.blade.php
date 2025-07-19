@@ -1,5 +1,5 @@
 <header>
-    <div class="d-flex flex-wrap align-items-center justify-content-between px-4 px-md-0 justify-content-md-around py-3 mb-3">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between px-4 px-md-0 py-3 mb-3">
         <a href="/">
             <img src="/images/christian.png" alt="Imagem de um peixe, símbolo do cristianismo" style="max-height: 35px">
         </a>

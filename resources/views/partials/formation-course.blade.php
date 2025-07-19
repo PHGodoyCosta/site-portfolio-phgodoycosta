@@ -12,5 +12,12 @@
             <span>({{ $formation->year }})</span>
         @endif
     </a>
-    <p class="ms-3 fs-6 description_curso">{{ $formation->description }}</p>
+    <p class="fs-6 mt-1 description_curso" id="description_complete_{{ $i }}" style="display: none;">
+        <span>{{ $formation->description }}</span>
+        <a class="fw-bold text-white text-decoration-underline" href="javascript:void(0)" onclick="hide_formation_description_text({{ $i }})">Ler menos</a>
+    </p>
+    <p class="fs-6 mt-1 description_curso" id="description_resumed_{{ $i }}" style="display: block;">
+        <span>{{ Str::limit($formation->description, 120) }}</span>
+        <a class="fw-bold text-white text-decoration-underline" href="javascript:void(0)" onclick="show_formation_description_text({{ $i }})">Ler mais</a>
+    </p>
 </li>

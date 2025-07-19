@@ -93,9 +93,10 @@
     max-width: 80%;
 }
 
-.project-post a{
+.project-post a {
     color: #3687ff;
     text-decoration: underline;
+    overflow-wrap: break-word;
 }
 
 @media only screen and (min-width: 600px) {

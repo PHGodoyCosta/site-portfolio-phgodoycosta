@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Projeto - {{ $project->name }}</title>
+        <title>{{ $project->name }} - Projeto</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -27,7 +27,6 @@
 
         <style>
             .project-post *{
-                max-width: 90%;
                 margin: auto;
             }
 
@@ -58,12 +57,16 @@
         <h1 class="text-center fw-bold text-capitalize">{{ $project->name }}</h1>
         <div class="container w-100 mb-5">
             @if ($project->repository)
-                <p class="fs-6 fs-md-5 ms-2" style="word-break: break-all;">
+                <p class="mb-3 fs-6 fs-md-5">
+                    <span class="fw-bold">Data de publicação:</span>
+                    <span>20/12/2006</span>
+                </p>
+                <p class="fs-6 fs-md-5" style="word-break: break-all;">
                     <span class="fw-bold">Link do repositório:</span>
                     <a href="{{ $project->repository }}" class="link-light">{{ $project->repository }}</a>
                 </p>
             @endif
-            <div class="d-flex p-3 flex-wrap" style="gap: 5px">
+            <div class="d-flex pt-3 pb-3 flex-wrap" style="gap: 5px">
                 @foreach ($project->tags as $tag)
                     @php
                         if (count($tag->projects) > 0) {
