@@ -30,11 +30,25 @@
                 margin: auto;
             }
 
+            .project-post img, .project-post video {
+                max-width: 100%;
+            }
+
             .project img {
                 max-width: 300px;
                 min-width: 200px;
                 /*height: 150px;*/
                 border-radius: 10px;
+            }
+
+            .project-post .obs {
+                padding: 10px;
+                background-color: #cccccc;
+                color: #1a1a1a;
+                border-radius: 5px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+
             }
 
             .project-post h2, .project-post p {

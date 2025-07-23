@@ -9,10 +9,10 @@ E começei a me perguntar, será que não tem nenhuma forma mais simples de reso
 
 Assim nasceu o Discipline, não encontrei nenhuma alternativa realmente viável ou boa para escolas, professores ou alunos que quisessem fazer provas de enem ou vestibular, então decidi arregaçar as mangar e começar a trabalhar.
 
-Na época, a minha comunidade de programação Code Company, estava funcionando, então abri um projeto Open Source e começamos a buscar interessados. Fiz um post no Tab News: <br>
-[https://www.tabnews.com.br/codecompanybrasil/top-6-servicos-uteis-que-voce-pode-encontrar-na-deep-web](https://www.tabnews.com.br/codecompanybrasil/top-6-servicos-uteis-que-voce-pode-encontrar-na-deep-web)
+Na época, a minha comunidade de programação [**Code Company**](https://phgodoycosta.com.br/projeto/code-company-brasil), estava funcionando, então abri um projeto Open Source e começamos a buscar interessados. Fiz um post no Tab News: <br>
+[https://www.tabnews.com.br/codecompanybrasil/projeto-open-source-que-pode-melhorar-a-educacao-no-brasil](https://www.tabnews.com.br/codecompanybrasil/projeto-open-source-que-pode-melhorar-a-educacao-no-brasil)
 <br><br>
-E divulguei em alguns grupos do whatsapp, até conseguirmos uma boa equipe. Fizemos um evento de abertura, com uma espécie de apresentação e reunião no discord, juntamos os interessados, e começamos a botar a mão na massa!
+E divulguei em alguns grupos do whatsapp, até conseguirmos uma boa equipe. Fizemos um evento de abertura, com uma espécie de apresentação e reunião no discord, juntamos os interessados, e começamos a botar a  **mão na massa!**
 
 ## Aplicação Prática
 
@@ -34,22 +34,26 @@ Seu navegador não suporta o elemento de vídeo.
 
 Durante o desenvolvimento, ele teve vários designs, foi remodelado, e como estavamos trabalhando em equipe, foi a primeira fez que o usei o **Figma**, para planejar tudo antes de construir. Conheci a ferramenta e me apaixonei imediatamente, percebi que para qualquer tela que eu fazia, economizava muito mais tempo primeiro planejando ela, e depois indo para o HTML e CSS.
 
-Um dos visuais iniciais foi esse:
+Um dos visuais bem iniciais foi esse, quando começamos com a versão Electron:
 
 <div align="center">
     <img src="/images/posts/discipline/tela_inicial_discipline.png" alt="Tela inicial do Discipline" width="640">
 </div>
 
-Depois fomos aprimorando, as questões eram como em uma folha corrida:
+Depois fomos aprimorando, chegamos a essa versão Beta que ficou bom boa parte do tempo que trabalhamos no projeto
 
 <div align="center">
-    <img src="/images/posts/discipline/questões_discipline.png" alt="Foto das questões" width="640">
+    <img src="/images/posts/discipline/visual_principal.png" alt="Foto das questões" width="640">
+    <img src="/images/posts/discipline/visual_principal_prova.png" alt="Foto das questões" width="640">
 </div>
 
-E com o tempo fomos adicionando mais detalhes tambem, colocamos um cronometro e mais funções:
+E com o tempo fomos adicionando mais detalhes e refatorando, até a ultima versão que eu adicionei um menu e tentei trazer um visual mais moderno.
+Na prova tambem adicionei a função de cronometro para os alunos poderem fazer sua prova com um tempo.
 
 <div align="center">
-    <img src="/images/posts/discipline/tela_de_questões.png" alt="Foto da Tela atualizada em produção" width="640">
+    <video src="/images/posts/discipline/fazendo_prova_design_novo.mp4" width="840" controls>
+    Seu navegador não suporta o elemento de vídeo.
+    </video>
 </div>
 
 ## Landing Page
@@ -59,7 +63,7 @@ E uma Landing Page para divulgar melhor o projeto, e servir como fonte de downlo
 Como a intenção era divulgar o projeto para a maior quantidade de pessoas, montamos essa Landing Page com algumas informações e link para download, porém atualmente ela está fora do ar e código está fechado, mas sua aparencia é essa
 
 <div align="center">
-    <video src="/images/posts/discipline/landing_page.webm" width="640" height="360" controls>
+    <video src="/images/posts/discipline/landing_page.webm" width="840" controls>
     Seu navegador não suporta o elemento de vídeo.
     </video>
 </div>
@@ -77,7 +81,7 @@ Por isso, separamos o projeto e deixamos parte do código fechado, apenas comigo
 No geral faziamos reuniões frequentes pelo Discord (comunidade Code Company), Whatsapp, e uma ferramenta que tinhamos recem descobertos: O Gather
 
 <div align="center">
-    <img src="/images/posts/discipline/Reunião_Discipline.png" alt="Reunião com professor no Gather.">
+    <img src="/images/posts/discipline/Reunião_Discipline.png" alt="Reunião com professor no Gather." width="640">
 </div>
 <br>
 
@@ -87,9 +91,15 @@ Atualmente (26/05/2025), o projeto segue parado, porém ainda temos intenção d
 
 ## Tecnologias e Repositórios
 
+### Observação:
+<div class="obs">Os repositórios originais estão <strong>todos privados</strong>, porque após a publicação dessa matéria, o Pablo me comentou que iria dar segmento ao projeto e refatorar.
+
+Sendo assim eu subi essa nossa versão que era aberta ao público no meu Git Hub pessoal</div>
+
+
 Inicialmente, como pensavamos em um programa de computador, começamos utilizando **Electron** e **React**
 
-**Repositório:** [https://github.com/codecompanybrasil/Discipline-Aluno](https://github.com/codecompanybrasil/Discipline-Aluno)
+**Repositório: 🔒 Privado**
 
 
 ![TypeScript](https://img.shields.io/badge/Code-TypeScript-3178C6?style=for-the-badge&logo=typescript)
@@ -104,7 +114,7 @@ Inicialmente, começamos usando utilizando **Next.JS** para melhorar o SEO, mas 
 
 <hr>
 
-**Repositório:** [https://github.com/codecompanybrasil/discipline-web](https://github.com/codecompanybrasil/discipline-web)
+**Repositório:** [https://github.com/PHGodoyCosta/discipline-web](https://github.com/PHGodoyCosta/discipline-web)
 
 ![TypeScript](https://img.shields.io/badge/Code-TypeScript-3178C6?style=for-the-badge&logo=typescript)
 ![React](https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react)
@@ -117,7 +127,7 @@ Atualmente (30/05/2025), ele está descontinuado assim como o resto do projeto, 
 
 <hr>
 
-**Repositório:** [https://github.com/codecompanybrasil/discipline-core](https://github.com/codecompanybrasil/discipline-core)
+**Repositório: 🔒 Privado**
 
 ![TypeScript](https://img.shields.io/badge/Code-TypeScript-3178C6?style=for-the-badge&logo=typescript)
 ![React](https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react)
@@ -129,7 +139,7 @@ Assim nasceu o **Discipline Core**
 
 <hr>
 
-**Repositório: 🔒 Privado** 
+**Repositório:** [https://github.com/PHGodoyCosta/discipline-server](https://github.com/PHGodoyCosta/discipline-server)
 
 ![TypeScript](https://img.shields.io/badge/Code-TypeScript-3178C6?style=for-the-badge&logo=typescript)
 ![NestJS](https://img.shields.io/badge/Backend-NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
@@ -139,4 +149,4 @@ Com a ideia de deixar parte do código fechado tambem montamos uma API, porém n
 
 ## Experiências e Aprendizados
 
-Esse foi o primeiro projeto relevante que eu trabalhei. Quando pensei em algo Open Source, tive que **vender a minha ideia**, **montar e participar de uma equipe**, participar de **reuniões semanais**, usar o Git para **codar em conjunto**, foi meu primeiro grande projeto com **React**, tive que conversar e fazer parcerias com professores e coordenadores da minha escola e tudo mais relacionado
+Esse foi o primeiro projeto relevante que eu trabalhei. Quando pensei em algo Open Source, tive que **vender a minha ideia**, **montar e participar de uma equipe**, participar de **reuniões semanais**, usar o Git para **codar em conjunto**, foi meu primeiro grande projeto com **React**, tive que conversar e fazer parcerias com professores e coordenadores da minha escola e tudo mais relacionado.
