@@ -71,10 +71,10 @@
         <h1 class="text-center fw-bold text-capitalize">{{ $project->name }}</h1>
         <div class="container w-100 mb-5">
             @if ($project->repository)
-                <p class="mb-3 fs-6 fs-md-5">
+                <!--<p class="mb-3 fs-6 fs-md-5">
                     <span class="fw-bold">Data de publicação:</span>
                     <span>20/12/2006</span>
-                </p>
+                </p>-->
                 <p class="fs-6 fs-md-5" style="word-break: break-all;">
                     <span class="fw-bold">Link do repositório:</span>
                     <a href="{{ $project->repository }}" class="link-light">{{ $project->repository }}</a>

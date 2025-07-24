@@ -145,7 +145,7 @@ Assim nasceu o **Discipline Core**
 ![NestJS](https://img.shields.io/badge/Backend-NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
 
 
-Com a ideia de deixar parte do código fechado tambem montamos uma API, porém não posso mostra-la aqui 😁
+O Back-End do Discipline, feito com NestJS
 
 ## Experiências e Aprendizados
 

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table("project", function(Blueprint $table) {
             $table->text('description')->change();
-            $table->timestamp('created_at')->useCurrent();
+            //$table->timestamp('created_at')->useCurrent();
         });
     }
 

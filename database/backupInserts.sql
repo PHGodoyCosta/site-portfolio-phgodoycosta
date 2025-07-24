@@ -51,6 +51,9 @@ INSERT INTO tag (id, name, slug, category) VALUES (26, 'Digital Ocean', 'digital
 
 INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category) VALUES (27, 'Selenium', '#00b400', '#009000', 'selenium', 'framework');
 
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category) VALUES (28, 'Prisma', '#123a50', '#0e2e40', 'prisma', 'framework');
+
+INSERT INTO tag (id, name, backgroundColor, borderColor, slug, category) VALUES (29, 'Tailwind', '#15c0b8', '#119a93', 'tailwind', 'framework');
 
 -- Formations:
 
