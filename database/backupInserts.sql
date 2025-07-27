@@ -99,6 +99,8 @@ INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (
 
 INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (18, "Gerador de números perfeitos", "Um Script Python que verifica e encontra números perfeitos", "https://github.com/PHGodoyCosta/Finder-Perfect-Numbers", "gerador-de-numeros-perfeitos", 1);
 
+INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (19, "Escolhedor de Tarefas Seminário", "Um programa que usa do Algorítimo Húngaro para melhor distribuir nossas tarefas semanais dentro do seminário entre X pessoas para Y trabalhos.", "https://github.com/PHGodoyCosta/Escolhedor_tarefas_seminario", "escolhedor-tarefas-seminario", 1);
+
 --Tag para os projects
 
 -- Discipline:
@@ -156,3 +158,9 @@ INSERT INTO relation_tag_project (tag_id, project_id) VALUES (24, 17);
 -- Gerador de números perfeitos
 
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (5, 18);
+
+-- Escolhedor de tarefas seminário - ID 19
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (4, 19);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (9, 19);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (18, 19);
