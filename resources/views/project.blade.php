@@ -33,6 +33,11 @@
         <style>
             .project-post *{
                 margin: auto;
+                max-width: 100% !important;
+            }
+
+            .project-post a {
+                word-break: break-all;
             }
 
             .project-post img, .project-post video {
@@ -65,6 +70,12 @@
                 font-weight: bold;
                 margin-top: 5px;
                 margin-bottom: 10px;
+            }
+
+            @media only screen and (max-width: 500px) {
+                .project-post p {
+                    text-align: justify;
+                }
             }
         </style>
 
