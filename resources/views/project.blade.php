@@ -3,6 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:site_name" content="Site Portfólio - Pedro Henrique Godoy Costa">
+        <meta property="og:title" content="{{ $project->name }} - Projeto" />
+        <meta property="og:description" content="{{ $project->description }}" />
+        <meta property="og:image" itemprop="image" content="https://phgodoycosta.com.br/images/posts/{{ $project->slug }}/wpp.png">
+        <meta property="og:type" content="website" />
 
         <title>{{ $project->name }} - Projeto</title>
 

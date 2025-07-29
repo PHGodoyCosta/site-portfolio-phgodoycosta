@@ -12,7 +12,7 @@ class Project extends Model
 
     protected $table = "project";
 
-    protected $fillable = ['id', 'name', 'description', 'repository', 'isPosted'];
+    protected $fillable = ['id', 'name', 'description', 'slug', 'repository', 'isPosted'];
 
     public function tags() {
         return $this->belongsToMany(Tag::class, 'relation_tag_project', 'project_id', 'tag_id');

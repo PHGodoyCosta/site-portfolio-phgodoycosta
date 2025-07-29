@@ -101,6 +101,10 @@ INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (
 
 INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (19, "Escolhedor de Tarefas Seminário", "Um programa que usa do Algorítimo Húngaro para melhor distribuir nossas tarefas semanais dentro do seminário entre X pessoas para Y trabalhos.", "https://github.com/PHGodoyCosta/Escolhedor_tarefas_seminario", "escolhedor-tarefas-seminario", 1);
 
+INSERT INTO project (id, name, description, repository, slug, isPosted) VALUES (19, "Escolhedor de Tarefas Seminário", "Um programa que usa do Algorítimo Húngaro para melhor distribuir nossas tarefas semanais dentro do seminário entre X pessoas para Y trabalhos.", "https://github.com/PHGodoyCosta/Escolhedor_tarefas_seminario", "escolhedor-tarefas-seminario", 1);
+
+INSERT INTO project (id, name, description, repository, slug, isPosted, isDestaque) VALUES (20, "Site com Filmes Cristãos", "Uma plataforma de streaming com filmes cristãos servidos a partir de uma conta do One Drive.", "https://github.com/PHGodoyCosta/Site_de_filmes", "site-com-filmes", 1, 1);
+
 --Tag para os projects
 
 -- Discipline:
@@ -164,3 +168,11 @@ INSERT INTO relation_tag_project (tag_id, project_id) VALUES (5, 18);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (4, 19);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (9, 19);
 INSERT INTO relation_tag_project (tag_id, project_id) VALUES (18, 19);
+
+-- Site com Filmes
+
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (3, 20);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (8, 20);
+INSERT INTO relation_tag_project (tag_id, project_id) VALUES (18, 20);
+
+
