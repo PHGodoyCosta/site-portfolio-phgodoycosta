@@ -22,18 +22,27 @@
         @endenv
 
         @production
-            <link rel="stylesheet" href="/build/assets/app-DhVkvI4C.css">
-            <link rel="stylesheet" href="/build/assets/home-BSzF_EDF.css">
+            <link rel="stylesheet" href="/build/assets/app-5wKMzItK.css">
+            <link rel="stylesheet" href="/build/assets/home-DfEHtwIX.css">
+            <script type="module" src="/build/assets/app-C7Kv14eg.js"></script>
         @endproduction
 
         @yield('styles')
     </head>
     <body>
-        @include('components.layout.header')
+        @php
+            $navCurrent = match (true) {
+                request()->is('/') => 'Início',
+                request()->is('blog') => 'Blog',
+                request()->is('projects') || request()->is('projeto/*') => 'Projetos',
+                default => null,
+            };
+        @endphp
+        <x-layout.navbar :current="$navCurrent" />
 
         @yield('content')
 
-        @include('components.layout.footer')
+        <x-layout.vg-footer />
 
         @yield('scripts')
     </body>

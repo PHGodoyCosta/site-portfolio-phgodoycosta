@@ -63,3 +63,7 @@ Route::get("/projects", function() {
 Route::get("/404", function() {
     return view("features.errors.404");
 });
+
+Route::get("/design-system", function() {
+    return view("features.design-system.design-system");
+});

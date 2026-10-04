@@ -1,33 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-        <div class="d-flex justify-content-center flex-column align-items-center flex-lg-row mt-4 w-100 mb-3 mb-md-0 gap-3 gap-md-0" style="gap: 0px;overflow: hidden" id="sobre-mim">
-            <div style="max-width: 500px;" class="d-flex col-auto col-sm justify-content-center"> {{-- order-2 order-lg-1 --}}
-                <img class="personal-image" src="images/my_picture_1.png" alt="Imagem principal de Pedro Henrique Godoy Costa" style="max-width: 85%">
-            </div>
-            <div class="col-auto"> {{-- order-lg-2 --}}
-                <div class="w-75 w-sm-auto m-auto mx-sm-0">
-                    <p class="m-0">Olá! 👋 Meu nome é</p>
-                    <h1 class="mt-1 mb-2 fw-bold fs-4 fs-sm-2">Pedro Henrique Godoy Costa</h1>
-                    <h3 class="fs-5 fs-sm-3 mb-2">Desenvolvedor Full Stack Junior</h3>
-                </div>
-                <p class="w-75 w-sm-auto m-auto mx-sm-0 mb-3 mb-sm-2 fs-6" style="max-width: 500px">Transformar ideias em <strong>soluções práticas</strong> é o que mais me motiva. Cada projeto que desenvolvi, seja para o portfólio ou para resolver problemas do dia a dia, carrega meu <strong>esforço</strong> e <strong>sonho</strong> de usar a <strong>tecnologia</strong> para impactar vidas. Com uma trajetória de <strong>aprendizado constante</strong> e uma paixão incansável por programação, estou pronto para transformar desafios em soluções reais. Quero <strong>colaborar</strong>, <strong>crescer</strong> e usar a tecnologia para construir um <strong>futuro melhor</strong>. Meu objetivo é ir além do código, criando um <strong>impacto duradouro</strong> e soluções que realmente <strong>transformem o mundo</strong>.</p>
-                <div class="d-flex align-items-center flex-column flex-md-row" style="gap: 20px">
-                    <a href="https://www.instagram.com/phgodoycosta/" class="d-flex align-items-center link-light" style="gap: 5px">
-                        <img src="images/instagram.png" alt="Imagem Icon do instagram" style="width: 35px">
-                        <p class="m-0">&#64;phgodoycosta</p>
-                    </a>
-                    <a href="https://github.com/PHGodoyCosta" class="d-flex align-items-center link-light" style="gap: 5px">
-                        <img src="images/github_white_icon.png" alt="Imagem Icon do instagram" style="width: 35px">
-                        <p class="m-0">/phgodoycosta</p>
-                    </a>
-                    <a href="https://www.linkedin.com/in/phgodoycosta/" class="d-flex align-items-center link-light" style="gap: 5px">
-                        <img src="images/linkedin_icon.png" alt="Imagem Icon do instagram" style="width: 35px">
-                        <p class="m-0">/phgodoycosta</p>
-                    </a>
-                </div>
-            </div>
-        </div>
+        @include('features.home.hero')
+
         <div class="w-100 mt-4 section" style="background-color: var(--section-light-background);min-height: 200px;color: white">
             <h2 class="ms-3 fw-bold mb-2">Projetos Destaque</h2>
             <div>
