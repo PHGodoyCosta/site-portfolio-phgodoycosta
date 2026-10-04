@@ -1,36 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.app')
 
-
-        <title>Pedro Henrique Godoy Costa - Site Portfólio</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-        <!-- Headers -->
-        @php
-            require __DIR__ . "/../../../resources/Components/head.blade.php";
-        @endphp
-
-        @env("local")
-            @vite('resources/css/app.css')
-            @vite('resources/css/home.css')
-            @vite('resources/js/app.js')
-        @endenv
-
-        @production
-            <link rel="stylesheet" href="/build/assets/app-DhVkvI4C.css">
-            <link rel="stylesheet" href="/build/assets/home-BSzF_EDF.css">
-        @endproduction
-    </head>
-    <body>
-        @php
-            require __DIR__ . "/../../../resources/Components/header.blade.php";
-        @endphp
+@section('content')
         <div class="d-flex justify-content-center flex-column align-items-center flex-lg-row mt-4 w-100 mb-3 mb-md-0 gap-3 gap-md-0" style="gap: 0px;overflow: hidden" id="sobre-mim">
             <div style="max-width: 500px;" class="d-flex col-auto col-sm justify-content-center"> {{-- order-2 order-lg-1 --}}
                 <img class="personal-image" src="images/my_picture_1.png" alt="Imagem principal de Pedro Henrique Godoy Costa" style="max-width: 85%">
@@ -65,7 +35,7 @@
             </div>
             <div class="d-flex p-3 justify-content-center flex-wrap" style="gap: 20px" id="portfolio">
                 @foreach($projects as $project)
-                    @include('partials.project-card', ["project" => $project])
+                    @include('components.shared.project-card', ["project" => $project])
                 @endforeach
             </div>
         </div>
@@ -75,7 +45,7 @@
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
                     @if ($tag->category == 'language')
-                        @include("partials.tag-card", ["tag" => $tag])
+                        @include("components.home.tag-card", ["tag" => $tag])
                     @endif
                 @endforeach
             </div>
@@ -83,7 +53,7 @@
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
                     @if ($tag->category == 'framework')
-                        @include("partials.tag-card", ["tag" => $tag])
+                        @include("components.home.tag-card", ["tag" => $tag])
                     @endif
                 @endforeach
             </div>
@@ -91,7 +61,7 @@
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
                     @if ($tag->category == 'tool')
-                        @include("partials.tag-card", ["tag" => $tag])
+                        @include("components.home.tag-card", ["tag" => $tag])
                     @endif
                 @endforeach
             </div>
@@ -99,7 +69,7 @@
             <div class="d-flex p-2 mt-3 flex-wrap mb-3" style="gap: 15px">
                 @foreach ($tags as $tag)
                     @if ($tag->category == 'extra')
-                        @include("partials.tag-card", ["tag" => $tag])
+                        @include("components.home.tag-card", ["tag" => $tag])
                     @endif
                 @endforeach
             </div>
@@ -109,7 +79,7 @@
             <p class="ms-3 fs-6 description_curso">Tentei reunir todos os cursos que fiz nesse apanhado, porém o meu aprendizado durante esses anos foi uma mistura de cursos online, projetos que eu fazia, vários simples para teste que eu acabei perdendo, lendo documentação, Stack Overflow, quebrando a cabeça, procurando por fontes para resolver aquele bug específico, revisando código dos outros... Mas dentre os cursos, esses são os principais</p>
             <ul class="d-flex p-2 mt-3 flex-wrap" style="gap: 0px">
                 @foreach ($formations as $i => $formation)
-                    @include("partials.formation-course", ["formation" => $formation, "i" => $i])
+                    @include("components.home.formation-course", ["formation" => $formation, "i" => $i])
                 @endforeach
             </ul>
         </div>
@@ -144,6 +114,9 @@
                 </div>
             </div>
         </div>
+@endsection
+
+@section('scripts')
         <script>
             function hide_formation_description_text(id) {
                 document.getElementById('description_complete_' + id).style.display = 'none';
@@ -155,5 +128,4 @@
                 document.getElementById('description_complete_' + id).style.display = 'block';
             }
         </script>
-    </body>
-</html>
+@endsection

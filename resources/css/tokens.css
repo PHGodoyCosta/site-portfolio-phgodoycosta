@@ -1,0 +1,187 @@
+/* Vigília — design tokens (tema escuro único). Fonte: tokens.json do design system. */
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/Newsreader-Variable.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/Newsreader-Variable-Italic.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Superfícies */
+  --ground: #0B0A09;
+  --surface: #121110;
+  --surface-raised: #1A1917;
+  --surface-sunken: #070706;
+  --ground-glass: #0B0A09CC;
+
+  /* Linhas */
+  --line: #2A2825;
+  --line-strong: #3D3A35;
+  --line-control: #6F6A62;
+
+  /* Texto */
+  --ink: #F1EEE8;
+  --ink-soft: #D3CEC4;
+  --ink-muted: #A9A49B;
+  --ink-subtle: #908B82;
+
+  /* Fé (sand) */
+  --sand: #D9C197;
+  --sand-bright: #E9D7B0;
+  --sand-wash: #D9C1971A;
+
+  /* Código (ice, clay) */
+  --ice: #8FB8C9;
+  --ice-wash: #8FB8C91A;
+  --clay: #CC8D66;
+  --clay-deep: #4A2B1C;
+
+  /* Erro */
+  --danger: #F0907B;
+  --danger-wash: #F0907B1A;
+
+  /* Aliases */
+  --primary: var(--ink);
+  --on-primary: var(--ground);
+  --focus: var(--sand);
+  --success: var(--ice);
+
+  /* Sintaxe */
+  --code-fn: var(--ink);
+  --code-keyword: var(--ice);
+  --code-string: var(--sand);
+  --code-number: var(--clay);
+  --code-comment: var(--ink-subtle);
+  --code-punct: var(--ink-muted);
+
+  /* Famílias */
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-serif: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
+
+  /* Espaçamento */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 192px;
+
+  /* Controles e larguras */
+  --control-sm: 32px;
+  --control-md: 40px;
+  --control-lg: 48px;
+  --container: 1120px;
+  --container-wide: 1280px;
+  --container-narrow: 880px;
+  --measure-prose: 680px;
+  --measure-lead: 560px;
+
+  /* Raios */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-card: inset 0 1px 0 #FFFFFF0A, 0 1px 2px #00000080;
+  --shadow-raised: inset 0 1px 0 #FFFFFF0F, 0 0 0 1px #FFFFFF14, 0 18px 40px -12px #000000E6;
+  --shadow-float: 0 24px 64px -16px #000000F2;
+  --shadow-glow: 0 0 64px -8px #D9C1972E;
+  --shadow-focus: 0 0 0 2px #0B0A09, 0 0 0 4px #D9C197;
+  --shadow-key: inset 0 -1px 0 #00000099, inset 0 1px 0 #FFFFFF0F;
+
+  /* Movimento */
+  --duration-fast: 160ms;
+  --duration-base: 400ms;
+  --duration-slow: 550ms;
+  --duration-slower: 700ms;
+  --stagger-step: 80ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Camadas */
+  --z-nav: 40;
+  --z-menu: 50;
+  --z-toast: 60;
+
+  /* Tipografia: tamanho / altura de linha / peso / tracking */
+  --display-xl-size: 72px;  --display-xl-lh: 72px;  --display-xl-weight: 600; --display-xl-tracking: -0.045em;
+  --display-lg-size: 56px;  --display-lg-lh: 58px;  --display-lg-weight: 600; --display-lg-tracking: -0.04em;
+  --display-md-size: 44px;  --display-md-lh: 48px;  --display-md-weight: 600; --display-md-tracking: -0.035em;
+  --heading-lg-size: 32px;  --heading-lg-lh: 38px;  --heading-lg-weight: 600; --heading-lg-tracking: -0.03em;
+  --heading-md-size: 24px;  --heading-md-lh: 32px;  --heading-md-weight: 600; --heading-md-tracking: -0.02em;
+  --heading-sm-size: 18px;  --heading-sm-lh: 26px;  --heading-sm-weight: 600; --heading-sm-tracking: -0.01em;
+
+  --body-lg-size: 18px;  --body-lg-lh: 30px;
+  --body-size: 16px;     --body-lh: 26px;
+  --body-sm-size: 14px;  --body-sm-lh: 22px;
+  --caption-size: 13px;  --caption-lh: 20px;
+  --ui-size: 14px;       --ui-lh: 20px;  --ui-weight: 500; --ui-tracking: -0.005em;
+  --ui-sm-size: 13px;    --ui-sm-lh: 16px; --ui-sm-weight: 500;
+
+  --label-size: 12px;    --label-lh: 16px; --label-weight: 500; --label-tracking: 0.08em;
+  --mono-size: 14px;     --mono-lh: 22px;
+  --mono-sm-size: 13px;  --mono-sm-lh: 20px;
+
+  --article-body-size: 20px;  --article-body-lh: 34px;
+  --article-dek-size: 24px;   --article-dek-lh: 34px;
+  --article-quote-size: 30px; --article-quote-lh: 40px; --article-quote-tracking: -0.01em;
+  --article-h2-size: 28px;    --article-h2-lh: 36px; --article-h2-tracking: -0.02em;
+  --article-h3-size: 22px;    --article-h3-lh: 30px; --article-h3-tracking: -0.015em;
+}
+
+/* Abaixo de 640px a tipografia reduz (regra do bundle.css do design system) */
+@media (max-width: 639px) {
+  :root {
+    --display-xl-size: 44px; --display-xl-lh: 46px;
+    --display-lg-size: 40px; --display-lg-lh: 44px;
+    --display-md-size: 32px; --display-md-lh: 38px;
+    --heading-lg-size: 26px; --heading-lg-lh: 32px;
+    --article-body-size: 18px; --article-body-lh: 30px;
+  }
+}
+
+/* Base */
+html { background: var(--ground); color: var(--ink); font-family: var(--font-sans); }
+body { margin: 0; font-size: var(--body-size); line-height: var(--body-lh); }
+
+/* Foco: anel sólido de 2px em sand, a 3px do elemento */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+/* Movimento reduzido: sem deslocamento e sem transição */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

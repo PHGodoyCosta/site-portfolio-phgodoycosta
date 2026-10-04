@@ -1,5 +1,10 @@
 import "./bootstrap";
 
+import Alpine from "alpinejs";
+
+window.Alpine = Alpine;
+Alpine.start();
+
 //alert(1)
 
 // function hide_formation_description_text(id) {

@@ -21,7 +21,7 @@ Route::get('/', function () {
     $tags = Tag::all();
     $formations = Formation::all();
 
-    return view('home', ['projects' => $projects, 'tags' => $tags, 'formations' => $formations]);
+    return view('features.home.home', ['projects' => $projects, 'tags' => $tags, 'formations' => $formations]);
 });
 
 Route::get("/blog", function() {
@@ -40,14 +40,14 @@ Route::get('/projeto/{project}', function(string $projectName) {
         $markdownContent = "";
     }
 
-    return view('project', ['projectName' => $projectName, 'project' => $project, 'markdown' => $parser->parse($markdownContent)]);
+    return view('features.projects.project', ['projectName' => $projectName, 'project' => $project, 'markdown' => $parser->parse($markdownContent)]);
 });
 
 Route::get('/tag/{tag}', function(string $tagName) {
     $tag = Tag::where('slug', $tagName)->firstOrFail();
 
     if (count($tag->projects) > 0) {
-        return view('tag', ['tag' => $tag]);
+        return view('features.tag.tag', ['tag' => $tag]);
     } else {
         return abort('404');
     }
@@ -57,9 +57,9 @@ Route::get('/tag/{tag}', function(string $tagName) {
 Route::get("/projects", function() {
     $projects = Project::all();
 
-    return view("projects", ["projects" => $projects]);
+    return view("features.projects.projects", ["projects" => $projects]);
 });
 
 Route::get("/404", function() {
-    return view("404");
+    return view("features.errors.404");
 });

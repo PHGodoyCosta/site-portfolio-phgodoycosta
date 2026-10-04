@@ -1,35 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+
+@section('title', $project->name . ' - Projeto')
+
+@section('meta')
         <meta property="og:site_name" content="Site Portfólio - Pedro Henrique Godoy Costa">
         <meta property="og:title" content="{{ $project->name }} - Projeto" />
         <meta property="og:description" content="{{ $project->description }}" />
         <meta property="og:image" itemprop="image" content="https://phgodoycosta.com.br/images/posts/{{ $project->slug }}/wpp.png">
         <meta property="og:type" content="website" />
+@endsection
 
-        <title>{{ $project->name }} - Projeto</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-        <!-- Headers -->
-        @php
-            require __DIR__ . "/../../../resources/Components/head.blade.php";
-        @endphp
-
-        @env("local")
-            @vite('resources/css/app.css')
-            @vite('resources/css/home.css')
-        @endenv
-
-        @production
-            <link rel="stylesheet" href="/build/assets/app-DhVkvI4C.css">
-            <link rel="stylesheet" href="/build/assets/home-BSzF_EDF.css">
-        @endproduction
-
+@section('styles')
         <style>
             .project-post *{
                 margin: auto;
@@ -78,12 +59,9 @@
                 }
             }
         </style>
+@endsection
 
-    </head>
-    <body>
-        @php
-            require __DIR__ . "/../../../resources/Components/header.blade.php";
-        @endphp
+@section('content')
         <h1 class="text-center fw-bold text-capitalize">{{ $project->name }}</h1>
         <div class="container w-100 mb-5">
             @if ($project->repository)
@@ -118,5 +96,4 @@
                 @endphp
             </div>
         </div>
-    </body>
-</html>
+@endsection
