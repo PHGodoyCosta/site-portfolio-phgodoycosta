@@ -1,6 +1,7 @@
 /* Vigília — tokens do design system. Deve vir antes de qualquer outro estilo. */
 @import './tokens.css';
 @import './vg-components.css';
+@import './tree.css';
 
 :root {
     /* Ainda usada pelas páginas antigas enquanto migram para os tokens do Vigília. */

@@ -67,3 +67,7 @@ Route::get("/404", function() {
 Route::get("/design-system", function() {
     return view("features.design-system.design-system");
 });
+
+Route::get("/tree", function() {
+    return view("features.tree.tree");
+});
