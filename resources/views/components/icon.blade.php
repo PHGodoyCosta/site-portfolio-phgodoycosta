@@ -4,7 +4,7 @@
     'title' => null,
 ])
 
-{!! svg('lucide-' . $name, trim('vg-icon ' . ($attributes->get('class') ?? '')), array_filter([
+{!! svg(str_starts_with($name, 'si-') ? $name : 'lucide-' . $name, trim('vg-icon ' . ($attributes->get('class') ?? '')), array_filter([
     'width' => $size,
     'height' => $size,
     'title' => $title,

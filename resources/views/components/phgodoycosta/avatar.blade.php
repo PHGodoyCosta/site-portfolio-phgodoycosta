@@ -1,5 +1,5 @@
 @props([
-    'src' => null,
+    'src' => '/images/perfil-tree.jpg',
     'name' => '',
     'size' => 'md',
 ])

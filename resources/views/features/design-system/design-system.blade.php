@@ -210,7 +210,7 @@
             <div>
                 <span class="vg-t-label" style="display: block; margin-bottom: var(--space-2); color: var(--ink-subtle);">Desktop, após rolar, com busca</span>
                 <div style="width: 100%; height: 80px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); position: relative;">
-                    <x-layout.navbar current="Blog" :scrolled="true" style="position: static;">
+                    <x-layout.navbar current="Experiências" :scrolled="true" style="position: static;">
                         <x-slot:actions>
                             <x-phgodoycosta.button variant="secondary" size="sm" icon="search">
                                 Buscar

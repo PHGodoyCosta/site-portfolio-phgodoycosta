@@ -12,8 +12,8 @@
     $navLinks = $links ?? [
         ['label' => 'Início', 'href' => '/'],
         ['label' => 'Sobre', 'href' => '/#sobre-mim'],
-        ['label' => 'Projetos', 'href' => '/#portfolio'],
-        ['label' => 'Blog', 'href' => '/blog'],
+        ['label' => 'Experiências', 'href' => '/#experiencia'],
+        ['label' => 'Projetos', 'href' => '/#projetos'],
         ['label' => 'Contato', 'href' => '/#contato'],
     ];
 

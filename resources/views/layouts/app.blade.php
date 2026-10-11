@@ -15,17 +15,9 @@
         <!-- Headers -->
         @include('components.layout.head')
 
-        @env('local')
-            @vite('resources/css/app.css')
-            @vite('resources/css/home.css')
-            @vite('resources/js/app.js')
-        @endenv
-
-        @production
-            <link rel="stylesheet" href="/build/assets/app-5wKMzItK.css">
-            <link rel="stylesheet" href="/build/assets/home-DfEHtwIX.css">
-            <script type="module" src="/build/assets/app-C7Kv14eg.js"></script>
-        @endproduction
+        @vite('resources/css/app.css')
+        @vite('resources/css/home.css')
+        @vite('resources/js/app.js')
 
         @yield('styles')
     </head>

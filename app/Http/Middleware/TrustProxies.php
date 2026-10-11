@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 
 class TrustProxies extends Middleware
 {
-    /**
-     * The trusted proxies for this application.
-     *
-     * @var array<int, string>|string|null
+    /*
+     * Atrás de um proxy que termina o TLS (ngrok, Cloudflare, nginx), o PHP
+     * recebe a requisição em http e só o X-Forwarded-Proto diz que o cliente
+     * veio por https. Com $proxies nulo o Laravel ignora esse header, gera
+     * url()/asset()/redirect() em http:// e o navegador bloqueia tudo como
+     * conteúdo misto — o site "perde" o HTTPS. Confiamos em qualquer proxy
+     * porque o IP do ngrok muda a cada túnel e a app nunca é exposta direto.
      */
-    protected $proxies;
+    protected $proxies = '*';
 
     /**
      * The headers that should be used to detect proxies.

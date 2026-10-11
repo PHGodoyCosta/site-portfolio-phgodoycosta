@@ -1,8 +1,10 @@
 import "./bootstrap";
 
 import Alpine from "alpinejs";
+import typeOnView from "./type-on-view";
 
 window.Alpine = Alpine;
+Alpine.plugin(typeOnView);
 Alpine.start();
 
 //alert(1)

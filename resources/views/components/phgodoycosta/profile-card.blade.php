@@ -42,19 +42,21 @@
         @if (count($links))
             <ul class="vg-profile-card__links">
                 @foreach ($links as $link)
+                    @php($external = $link['external'] ?? true)
                     <li>
                         <a
                             href="{{ $link['href'] }}"
                             class="vg-profile-card__link"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            @if ($external) target="_blank" rel="noopener noreferrer" @endif
                         >
                             <span class="vg-t-ui">{{ $link['label'] }}</span>
                             <span class="vg-profile-card__link-meta">
                                 <span class="vg-t-mono-sm">{{ $link['handle'] }}</span>
-                                <x-icon name="external-link" :size="14" />
+                                <x-icon :name="$external ? 'external-link' : 'arrow-right'" :size="14" />
                             </span>
-                            <span class="vg-sr-only">(abre em nova aba)</span>
+                            @if ($external)
+                                <span class="vg-sr-only">(abre em nova aba)</span>
+                            @endif
                         </a>
                     </li>
                 @endforeach

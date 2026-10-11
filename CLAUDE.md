@@ -46,7 +46,9 @@ php artisan db:seed
 - `resources/views/components/` — Blade components, split into `layout/` (header, footer, head), `home/`, `shared/`.
 - `resources/views/layouts/app.blade.php` — the single shared layout, using `@yield`/`@include` (not `<x-layout>` slots).
 
-**Asset pipeline has a manual production path.** `app.blade.php` only uses `@vite(...)` inside `@env('local')`; in `@production` it links hardcoded built filenames (`app-DhVkvI4C.css`, `home-BSzF_EDF.css`). After running `npm run build`, these hashes change and **must be updated by hand** in the layout — there's no `@vite` manifest lookup in production. Don't forget this step after a frontend build intended for deploy.
+**Asset pipeline uses `@vite` in every environment.** Both layouts (`layouts/app.blade.php` and `layouts/minimal.blade.php`) call `@vite(...)` unconditionally: em dev ele usa o `public/hot`, e fora dele resolve os hashes pelo `public/build/manifest.json`. Não existe mais lista de nomes de arquivo escrita à mão no layout — depois de `npm run build` não há passo manual. O `public/build/` é gitignored, então o deploy precisa rodar `npm run build` (sem o manifest, `@vite` lança exceção).
+
+**Rodando atrás de um proxy (ngrok, Cloudflare, nginx).** `App\Http\Middleware\TrustProxies` tem `$proxies = '*'`, então o Laravel aceita `X-Forwarded-Proto`/`X-Forwarded-Host` e gera URLs em https com o host do túnel. Sem isso o site serve links `http://` dentro de uma página https e o navegador bloqueia CSS/JS como conteúdo misto.
 
 ## Design system
 

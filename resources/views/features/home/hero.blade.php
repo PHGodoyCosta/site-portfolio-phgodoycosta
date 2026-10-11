@@ -30,6 +30,18 @@
                 Transformo ideias em <em class="vg-accent">soluções práticas</em>
             </h1>
 
+            <ul class="vg-hero__services vg-t-body-lg">
+                @foreach ([
+                    ['terminal', 'Desenvolver aplicativos para celulares android e iphone.'],
+                    ['code-xml', 'Sites e sistemas completos.'],
+                    ['arrow-right', 'Landing Pages e fluxos de venda.'],
+                    ['bot', 'Automações com I.A e criação de agentes'],
+                    ['si-whatsapp', 'Integração de I.A no Whatsapp'],
+                ] as [$icon, $label])
+                    <li><x-icon :name="$icon" :size="20" /><span>{{ $label }}</span></li>
+                @endforeach
+            </ul>
+
             <p class="vg-t-body-lg vg-hero__lead">
                 Uso tecnologia para resolver problemas reais. Cada projeto que construo carrega o meu esforço e a vontade de criar um impacto duradouro.
             </p>
@@ -40,12 +52,12 @@
                 </x-phgodoycosta.button>
 
                 <a
-                    href="https://wa.me/5584991497337?text=Oi%20Pedro!%20Vim%20pelo%20seu%20site%20e%20tenho%20interesse%20nos%20seus%20servi%C3%A7os"
+                    href="https://wa.me/5567992498412?text=Oi%20Pedro!%20Vim%20pelo%20seu%20site%20e%20tenho%20interesse%20nos%20seus%20servi%C3%A7os"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="vg-btn vg-btn--whatsapp vg-btn--lg vg-t-ui"
                 >
-                    <span class="vg-icon vg-icon--whatsapp" aria-hidden="true">{!! svg('si-whatsapp')->toHtml() !!}</span>
+                    <x-icon name="si-whatsapp" />
                     <span>Pedir orçamento</span>
                     <span class="vg-sr-only">(abre em nova aba)</span>
                 </a>
@@ -56,13 +68,13 @@
             <x-phgodoycosta.profile-card
                 name="Pedro Henrique Godoy Costa"
                 :role="$profileRole"
-                location="Campo Grande, MS"
+                {{-- location="Campo Grande, MS" --}}
                 photo="/images/perfil-hero.jpg"
                 photo-alt="Retrato em preto e branco de Pedro Henrique Godoy Costa, de braços cruzados"
                 :links="[
                     ['label' => 'LinkedIn', 'handle' => '/phgodoycosta', 'href' => 'https://www.linkedin.com/in/phgodoycosta/'],
                     ['label' => 'GitHub', 'handle' => '/phgodoycosta', 'href' => 'https://github.com/PHGodoyCosta'],
-                    ['label' => 'Instagram', 'handle' => '@phgodoycosta', 'href' => 'https://www.instagram.com/phgodoycosta/'],
+                    ['label' => 'Todos os links', 'handle' => '/tree', 'href' => '/tree'],
                 ]"
             />
         </div>

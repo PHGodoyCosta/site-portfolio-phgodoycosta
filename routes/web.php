@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Project;
 use App\Models\Tag;
 use App\Models\Formation;
+use App\Support\Markdown\ArticleMarkdown;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,17 +31,16 @@ Route::get("/blog", function() {
 
 Route::get('/projeto/{project}', function(string $projectName) {
     $project = Project::where('slug', $projectName)->firstOrFail();
-    $parser = new \cebe\markdown\GithubMarkdown();
 
-    $markdownPath = __DIR__ . '/../resources/posts/' . $project->slug . '.md';
+    $markdownPath = resource_path('posts/' . $project->slug . '.md');
+    $article = ArticleMarkdown::parse(file_exists($markdownPath) ? file_get_contents($markdownPath) : '');
 
-    if (file_exists($markdownPath)) {
-        $markdownContent = file_get_contents($markdownPath);
-    } else {
-        $markdownContent = "";
-    }
-
-    return view('features.projects.project', ['projectName' => $projectName, 'project' => $project, 'markdown' => $parser->parse($markdownContent)]);
+    return view('features.projects.project', [
+        'projectName' => $projectName,
+        'project' => $project,
+        'body' => $article['html'],
+        'headings' => $article['headings'],
+    ]);
 });
 
 Route::get('/tag/{tag}', function(string $tagName) {
